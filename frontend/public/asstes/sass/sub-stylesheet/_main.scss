@@ -1,0 +1,27 @@
+.section-news{
+    background-color: #F8FBFF;
+    .section-title{ 
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 26px;
+        color: #49ADA1;
+    }
+    .news-items{
+        .card{
+            border: none;
+            .card-body{
+                .card-title{
+                    font-size: 18px;
+                    font-weight: 700;
+                    line-height: 26px;
+                    color: rgba(0, 0, 0, 0.9);
+                }
+                .card-text{
+                    font-size: 14px;
+                    line-height: 26px;
+                    color: rgba(0, 0, 0, 0.9);
+                }
+            }
+        }
+    }
+}

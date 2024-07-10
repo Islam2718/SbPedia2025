@@ -1,0 +1,34 @@
+.section-footer{
+    // background-color: #49ADA1 !important;
+    border-top:1px solid #E7EAED !important;
+    h5{
+        color: #136A82;
+        font-size: 18px;
+        font-weight: 700;
+    }
+    ul{
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+        text-align: center;
+        li{
+            list-style: none;
+            // display: inline-block;
+            a{
+                color: #49ADA1;
+                font-size: 14px;
+                margin-right: 15px;
+                &:hover{
+                    color: #136A82;
+                }
+            }
+        }
+    }
+}
+.section-copyright{
+    border-top: 1px solid #E7EAED !important;
+    p{
+        margin-bottom: 0px;
+        font-size: 14px;
+    }
+}

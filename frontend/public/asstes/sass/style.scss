@@ -1,0 +1,16 @@
+//@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+// Core variables and mixins
+@import "sub-stylesheet/_variables";
+@import "sub-stylesheet/_mixins";
+
+// Core CSS
+@import "sub-stylesheet/_global";
+@import "sub-stylesheet/_topbar";
+@import "sub-stylesheet/_footer";
+// @import "sub-stylesheet/_header";
+@import "sub-stylesheet/_banner";
+@import "sub-stylesheet/_main";
+
+// Components

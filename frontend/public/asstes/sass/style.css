@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap&subset=greek");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+@import url("../../css/clanot-narrowbook-cufonfonts-webfont/style.css");
+@import url("https://fonts.googleapis.com/css2?family=Capriola&display=swap");
+/*!
+  Theme Name: Social Business Pedia
+  Theme URI: https://phicsart.com/
+  Author: Islamhossain.info.
+  Author URI: http://islamhossain.info/
+  Description: Image data is a Creative HTML5 Template for Saas, Startup & any ytpe of confarence.
+  Version: 1.0.0
+  Tags: app, image data landing page, app landing page, app showcase template, application services, gradient color, landing, marketing, responsive template, seo, software, Software Services, startup, tech, web application landing page.
+*/
+/*--------------------------------------------------------------
+global components styles... 
+--------------------------------------------------------------*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+}
+
+body {
+  font-family: "Encode Sans Expanded", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.section-topbar {
+  border-bottom: 1px solid #E7EAED !important;
+}
+.section-topbar ul {
+  margin-bottom: 0px;
+  list-style: none;
+}
+.section-topbar ul li {
+  list-style: none;
+  display: inline-block;
+}
+.section-topbar ul li a {
+  line-height: 50px;
+  color: #49ADA1;
+  font-size: 14px;
+  margin-right: 15px;
+}
+.section-topbar ul li a:hover {
+  color: #136A82;
+}
+.section-topbar a {
+  line-height: 50px;
+  color: #1d6842;
+  font-size: 14px;
+}
+
+.section-footer {
+  border-top: 1px solid #E7EAED !important;
+}
+.section-footer h5 {
+  color: #136A82;
+  font-size: 18px;
+  font-weight: 700;
+}
+.section-footer ul {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  text-align: center;
+}
+.section-footer ul li {
+  list-style: none;
+}
+.section-footer ul li a {
+  color: #49ADA1;
+  font-size: 14px;
+  margin-right: 15px;
+}
+.section-footer ul li a:hover {
+  color: #136A82;
+}
+
+.section-copyright {
+  border-top: 1px solid #E7EAED !important;
+}
+.section-copyright p {
+  margin-bottom: 0px;
+  font-size: 14px;
+}
+
+.section-slider {
+  min-height: 350px;
+}
+.section-slider a {
+  font-size: 12px;
+  color: #49ADA1;
+  line-height: 50px;
+}
+
+.section-news {
+  background-color: #F8FBFF;
+}
+.section-news .section-title {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 26px;
+  color: #49ADA1;
+}
+.section-news .news-items .card {
+  border: none;
+}
+.section-news .news-items .card .card-body .card-title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26px;
+  color: rgba(0, 0, 0, 0.9);
+}
+.section-news .news-items .card .card-body .card-text {
+  font-size: 14px;
+  line-height: 26px;
+  color: rgba(0, 0, 0, 0.9);
+}/*# sourceMappingURL=style.css.map */
