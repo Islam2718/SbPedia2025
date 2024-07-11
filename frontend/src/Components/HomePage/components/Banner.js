@@ -1,21 +1,11 @@
 import React, { useEffect }  from 'react';
 import config from '../../../config';
-// import { Swiper, SwiperSlide} from 'swiper/react';
-// import { Pagination } from 'swiper/modules';
-// import required modules
-// import { Autoplay } from 'swiper/modules'
-// import 'swiper/css';
-// import axios from 'axios';
-// import { Link } from 'react-router-dom'; 
-// import config from '../../config';
 const Banner = () =>{
-    // const [sliderJsonData, setSliderJsonData] = useState([]);
     useEffect(() => {  
-        // fetchSliderData();
       }, []);
     return(
         <>
-            <section className='section-slider' style={{ backgroundImage: `url(${config.FILE_URL + 'banner.png'})` }}>
+            <section className='section-banner' style={{ backgroundImage: `url(${config.FILE_URL + 'banner.png'})` }}>
                 <div className='container'>
                     <div className='row'>
                         <div className='col text-bottom'>

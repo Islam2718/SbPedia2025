@@ -1,11 +1,20 @@
-.section-news{
-    background-color: #F8FBFF;
-    .section-title{ 
+.section-title{ 
+    p{
         font-size: 32px;
         font-weight: 700;
-        line-height: 26px;
+        line-height: 25px;
         color: #49ADA1;
     }
+    span{
+        font-size: 14px;
+        line-height: 26px;
+        color: rgba(0, 0, 0, 0.9);
+    }
+}
+// homepage news section 
+.section-news{
+    // background-color: #F8FBFF;
+    // section-title [_main.scss - 1]
     .news-items{
         .card{
             border: none;
@@ -14,14 +23,75 @@
                     font-size: 18px;
                     font-weight: 700;
                     line-height: 26px;
-                    color: rgba(0, 0, 0, 0.9);
+                    color: rgba(0, 0, 0, 0.8);
                 }
                 .card-text{
                     font-size: 14px;
                     line-height: 26px;
-                    color: rgba(0, 0, 0, 0.9);
+                    color: rgba(0, 0, 0, 0.8);
                 }
             }
         }
+        a{
+            &:hover{
+                color: #136A82;
+                img{
+                    filter: grayscale(100%);
+                    transition: all 0.2s ease;
+                }
+            }
+        }
+    }
+}
+// homepage wiki section 
+.section-wiki{
+    background-color: #F8FBFF;
+    // h3{
+    //     color: #136A82;
+    //     // font-size: 18px;
+    //     font-weight: 700;
+    //     font-weight: bold;
+    // }
+    p{
+        a{
+            color: rgba(0, 0, 0, 0.9);
+            font-size: 14px;
+            &:hover{
+                color: #136A82;
+            }
+        }
+    }
+}
+
+.section-call2actionOne{
+    background-color: #F8FBFF;
+    h4{
+        color: #136A82;
+        font-size: 25px;
+        font-weight: 700;
+        font-weight: bold;
+        span{
+            color: #49ADA1;
+        }
+    }
+    p{
+        color: #fff;
+        font-size: 14px;        
+    }
+}
+.section-call2actionTwo{
+    background-color: #F8FBFF;
+    h4{
+        color: #fff;
+        font-size: 25px;
+        font-weight: 700;
+        font-weight: bold;
+        span{
+            color: #49ADA1;
+        }
+    }
+    p{
+        color: #fff;
+        font-size: 14px;        
     }
 }

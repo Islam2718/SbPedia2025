@@ -6,7 +6,7 @@ const Footer = () =>{
     // const siteInfo = useContext(SiteInfoContext);
     return(
         <>
-            <section className='row section-footer container-fluid py-4'>
+            <section className='row section-footer container-fluid py-5'>
                 <div className='col-3 text-center'>
                     <h5>Social Business</h5>
                     <ul>
@@ -35,7 +35,7 @@ const Footer = () =>{
                     </ul>
                 </div>
                 <div className='col-5 text-center'>
-                    <div><a href="#0"><img src={config.FILE_URL + "logo2.png"} alt="" /></a></div>
+                    <div><a href="#0"><img src={config.FILE_URL + "logoF.png"} alt="" /></a></div>
                     <div className='mt-2'><a href="#0" className='py-2'>www.socialbusinesspedia.com</a></div>
                 </div>
             </section>

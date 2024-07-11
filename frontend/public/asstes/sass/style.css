@@ -27,10 +27,37 @@ global components styles...
 
 body {
   font-family: "Encode Sans Expanded", sans-serif;
+  background-color: #F8FBFF;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 a {
   text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.sbp25-bg-primary {
+  background-color: #136A82;
+}
+
+.sbp25-bg-secondary {
+  background-color: #49ADA1;
+}
+
+.sbp25-btn {
+  font-size: 14px;
+  background-color: #49ADA1;
+  color: #fff;
+  font-weight: 700;
+  padding: 8px 24px;
+  border-radius: 5px;
+}
+.sbp25-btn:hover {
+  color: #fff;
+  background-color: #136A82;
   transition: all 0.2s ease;
 }
 
@@ -61,10 +88,11 @@ a {
 }
 
 .section-footer {
+  background-color: #136A82 !important;
   border-top: 1px solid #E7EAED !important;
 }
 .section-footer h5 {
-  color: #136A82;
+  color: #ecebeb;
   font-size: 18px;
   font-weight: 700;
 }
@@ -78,40 +106,77 @@ a {
   list-style: none;
 }
 .section-footer ul li a {
-  color: #49ADA1;
+  color: #d6d4d4;
   font-size: 14px;
   margin-right: 15px;
 }
 .section-footer ul li a:hover {
-  color: #136A82;
+  color: #fff;
+  opacity: 0.8;
+}
+
+a {
+  font-size: 14px;
+  color: #d6d4d4;
+}
+a:hover {
+  color: #fff;
+  opacity: 0.8;
+  text-decoration: none;
 }
 
 .section-copyright {
+  background-color: #136A82 !important;
   border-top: 1px solid #E7EAED !important;
 }
 .section-copyright p {
+  color: #fff;
   margin-bottom: 0px;
   font-size: 14px;
 }
+.section-copyright p a {
+  color: #fff;
+}
+.section-copyright p a:hover {
+  color: #49ADA1;
+}
 
-.section-slider {
+.section-banner {
   min-height: 350px;
 }
-.section-slider a {
-  font-size: 12px;
+.section-banner a {
+  font-size: 14px;
   color: #49ADA1;
   line-height: 50px;
 }
-
-.section-news {
-  background-color: #F8FBFF;
+.section-banner a:hover {
+  color: #136A82;
+  font-weight: 700;
+  transform: scale(1.05);
+  transition: all 0.2s ease;
 }
-.section-news .section-title {
+.section-banner .card {
+  border-radius: 5px;
+  border: 1px solid #49ADA1;
+  transition: all 0.2s ease;
+}
+.section-banner .card:hover {
+  border: 1px solid #136A82;
+  transition: all 0.2s ease;
+}
+
+.section-title p {
   font-size: 32px;
   font-weight: 700;
-  line-height: 26px;
+  line-height: 25px;
   color: #49ADA1;
 }
+.section-title span {
+  font-size: 14px;
+  line-height: 26px;
+  color: rgba(0, 0, 0, 0.9);
+}
+
 .section-news .news-items .card {
   border: none;
 }
@@ -119,10 +184,62 @@ a {
   font-size: 18px;
   font-weight: 700;
   line-height: 26px;
-  color: rgba(0, 0, 0, 0.9);
+  color: rgba(0, 0, 0, 0.8);
 }
 .section-news .news-items .card .card-body .card-text {
   font-size: 14px;
   line-height: 26px;
+  color: rgba(0, 0, 0, 0.8);
+}
+.section-news .news-items a:hover {
+  color: #136A82;
+}
+.section-news .news-items a:hover img {
+  filter: grayscale(100%);
+  transition: all 0.2s ease;
+}
+
+.section-wiki {
+  background-color: #F8FBFF;
+}
+.section-wiki p a {
   color: rgba(0, 0, 0, 0.9);
+  font-size: 14px;
+}
+.section-wiki p a:hover {
+  color: #136A82;
+}
+
+.section-call2actionOne {
+  background-color: #F8FBFF;
+}
+.section-call2actionOne h4 {
+  color: #136A82;
+  font-size: 25px;
+  font-weight: 700;
+  font-weight: bold;
+}
+.section-call2actionOne h4 span {
+  color: #49ADA1;
+}
+.section-call2actionOne p {
+  color: #fff;
+  font-size: 14px;
+}
+
+.section-call2actionTwo {
+  background-color: #F8FBFF;
+}
+.section-call2actionTwo h4 {
+  color: #fff;
+  font-size: 25px;
+  font-weight: 700;
+  font-weight: bold;
+}
+.section-call2actionTwo h4 span {
+  color: #49ADA1;
+}
+.section-call2actionTwo p {
+  color: #fff;
+  font-size: 14px;
 }/*# sourceMappingURL=style.css.map */

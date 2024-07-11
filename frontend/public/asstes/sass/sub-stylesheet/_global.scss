@@ -19,8 +19,33 @@ global components styles...
 }
 body {
   font-family: 'Encode Sans Expanded', sans-serif;
+  background-color: #F8FBFF;
+}
+body::-webkit-scrollbar {
+  display: none;
 }
 a{
   text-decoration: none;
   transition: all 0.2s ease;
+}
+
+.sbp25-bg-primary{
+  background-color: #136A82;
+}
+.sbp25-bg-secondary{
+  background-color: #49ADA1;
+}
+
+.sbp25-btn{
+  font-size: 14px;
+  background-color: #49ADA1;
+  color: #fff;
+  font-weight: 700;
+  padding: 8px 24px;
+  border-radius: 5px;
+  &:hover{
+    color: #fff;
+    background-color: #136A82;
+    transition: all 0.2s ease;
+  }
 }

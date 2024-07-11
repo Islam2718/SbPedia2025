@@ -1,8 +1,9 @@
 .section-footer{
-    // background-color: #49ADA1 !important;
+    background-color: #136A82 !important;
+    // opacity:0.7;
     border-top:1px solid #E7EAED !important;
     h5{
-        color: #136A82;
+        color: #ecebeb;
         font-size: 18px;
         font-weight: 700;
     }
@@ -15,20 +16,38 @@
             list-style: none;
             // display: inline-block;
             a{
-                color: #49ADA1;
+                color: #d6d4d4;
                 font-size: 14px;
                 margin-right: 15px;
                 &:hover{
-                    color: #136A82;
+                    color: #fff;
+                    opacity: 0.8;
                 }
             }
         }
     }
 }
+a{
+    font-size: 14px;
+    color : #d6d4d4;
+    &:hover{
+        color: #fff;
+        opacity: 0.8;
+        text-decoration: none;
+    }
+}
 .section-copyright{
+    background-color: #136A82 !important;
     border-top: 1px solid #E7EAED !important;
     p{
+        color: #fff;
         margin-bottom: 0px;
         font-size: 14px;
+        a{
+            color: #fff;
+            &:hover{
+                color: #49ADA1;
+            }
+        }
     }
 }
