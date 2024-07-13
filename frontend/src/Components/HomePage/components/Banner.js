@@ -5,8 +5,8 @@ const Banner = () =>{
       }, []);
     return(
         <>
-            <section className='section-banner' style={{ backgroundImage: `url(${config.FILE_URL + 'banner.png'})` }}>
-                <div className='container'>
+            <section className='section-banner'>
+                <div className='container'  style={{ backgroundImage: `url(${config.FILE_URL + 'banner.png'})`, backgroundSize: '100% 100%', backgroundRepeat: 'no-repeat' }}>
                     <div className='row'>
                         <div className='col text-bottom'>
                             {/* left..  */}

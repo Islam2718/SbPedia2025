@@ -9,7 +9,9 @@ function Header(){
     // let location = useLocation();
     return(
         <>
-            <section className='row section-topbar container-fluid'>
+            <section className='row '>
+                <div className='container section-topbar'>
+                    <div className='row'>
                 <div className='col text-left'>
                     <ul>
                         <li>
@@ -41,6 +43,8 @@ function Header(){
                             </a>
                         </li>
                     </ul>
+                    </div>
+                    </div>
                 </div>
             </section>
         </>      

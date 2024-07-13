@@ -1,10 +1,10 @@
 .section-footer{
     background-color: #136A82 !important;
     // opacity:0.7;
-    border-top:1px solid #E7EAED !important;
+    border-top:0.063rem solid #E7EAED !important;
     h5{
         color: #ecebeb;
-        font-size: 18px;
+        font-size: 1.125rem;
         font-weight: 700;
     }
     ul{
@@ -17,8 +17,8 @@
             // display: inline-block;
             a{
                 color: #d6d4d4;
-                font-size: 14px;
-                margin-right: 15px;
+                font-size: 0.875rem;
+                margin-right: 0.938rem;
                 &:hover{
                     color: #fff;
                     opacity: 0.8;
@@ -28,7 +28,7 @@
     }
 }
 a{
-    font-size: 14px;
+    font-size: 0.875rem;
     color : #d6d4d4;
     &:hover{
         color: #fff;
@@ -38,11 +38,11 @@ a{
 }
 .section-copyright{
     background-color: #136A82 !important;
-    border-top: 1px solid #E7EAED !important;
+    border-top: 0.063rem solid #E7EAED !important;
     p{
         color: #fff;
         margin-bottom: 0px;
-        font-size: 14px;
+        font-size: 0.875rem;
         a{
             color: #fff;
             &:hover{

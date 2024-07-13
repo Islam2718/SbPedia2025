@@ -1,10 +1,10 @@
 // banner style 
 .section-banner{
-    min-height: 350px; 
+    min-height: 21.875rem; 
     a{
-        font-size: 14px;
+        font-size: 0.875rem;
         color: #49ADA1;
-        line-height: 50px;
+        line-height: 3.125rem;
         &:hover{
             color: #136A82;
             font-weight: 700;
@@ -14,11 +14,11 @@
     }
     
     .card{
-        border-radius: 5px;
-        border: 1px solid #49ADA1;
+        border-radius: 0.313rem;
+        border: 0.063rem solid #49ADA1;
         transition: all 0.2s ease;
         &:hover{
-            border: 1px solid #136A82;
+            border: 0.063rem solid #136A82;
             transition: all 0.2s ease;
         }
     }
