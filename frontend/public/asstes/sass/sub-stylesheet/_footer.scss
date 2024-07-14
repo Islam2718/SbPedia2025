@@ -4,7 +4,7 @@
     border-top:1px solid #E7EAED !important;
     h5{
         color: #ecebeb;
-        font-size: 18px;
+        font-size: $ssbl-fs-18;
         font-weight: 700;
     }
     ul{
@@ -17,7 +17,7 @@
             // display: inline-block;
             a{
                 color: #d6d4d4;
-                font-size: 14px;
+                font-size: $ssbl-fs-14;
                 margin-right: 15px;
                 &:hover{
                     color: #fff;
@@ -28,7 +28,7 @@
     }
 }
 a{
-    font-size: 14px;
+    font-size: $ssbl-fs-14;
     color : #d6d4d4;
     &:hover{
         color: #fff;
@@ -42,7 +42,7 @@ a{
     p{
         color: #fff;
         margin-bottom: 0px;
-        font-size: 14px;
+        font-size: $ssbl-fs-14;
         a{
             color: #fff;
             &:hover{

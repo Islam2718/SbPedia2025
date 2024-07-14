@@ -48,7 +48,7 @@ a {
 }
 
 .sbp25-btn {
-  font-size: 14px;
+  font-size: 0.875rem;
   background-color: #49ADA1;
   color: #fff;
   font-weight: 700;
@@ -75,7 +75,7 @@ a {
 .section-topbar ul li a {
   line-height: 50px;
   color: #49ADA1;
-  font-size: 14px;
+  font-size: 0.875rem;
   margin-right: 15px;
 }
 .section-topbar ul li a:hover {
@@ -84,7 +84,7 @@ a {
 .section-topbar a {
   line-height: 50px;
   color: #1d6842;
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .section-footer {
@@ -93,7 +93,7 @@ a {
 }
 .section-footer h5 {
   color: #ecebeb;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 700;
 }
 .section-footer ul {
@@ -107,7 +107,7 @@ a {
 }
 .section-footer ul li a {
   color: #d6d4d4;
-  font-size: 14px;
+  font-size: 0.875rem;
   margin-right: 15px;
 }
 .section-footer ul li a:hover {
@@ -116,7 +116,7 @@ a {
 }
 
 a {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #d6d4d4;
 }
 a:hover {
@@ -132,7 +132,7 @@ a:hover {
 .section-copyright p {
   color: #fff;
   margin-bottom: 0px;
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 .section-copyright p a {
   color: #fff;
@@ -145,7 +145,7 @@ a:hover {
   min-height: 350px;
 }
 .section-banner a {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #49ADA1;
   line-height: 50px;
 }
@@ -166,14 +166,14 @@ a:hover {
 }
 
 .section-title p {
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: 700;
-  line-height: 25px;
+  line-height: 1.563rem;
   color: #49ADA1;
 }
 .section-title span {
-  font-size: 14px;
-  line-height: 26px;
+  font-size: 0.875rem;
+  line-height: 1.563rem;
   color: rgba(0, 0, 0, 0.9);
 }
 
@@ -181,14 +181,14 @@ a:hover {
   border: none;
 }
 .section-news .news-items .card .card-body .card-title {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 700;
-  line-height: 26px;
+  line-height: 1.563rem;
   color: rgba(0, 0, 0, 0.8);
 }
 .section-news .news-items .card .card-body .card-text {
-  font-size: 14px;
-  line-height: 26px;
+  font-size: 0.875rem;
+  line-height: 1.563rem;
   color: rgba(0, 0, 0, 0.8);
 }
 .section-news .news-items a:hover {
@@ -204,7 +204,7 @@ a:hover {
 }
 .section-wiki p a {
   color: rgba(0, 0, 0, 0.9);
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 .section-wiki p a:hover {
   color: #136A82;
@@ -215,7 +215,7 @@ a:hover {
 }
 .section-call2actionOne h4 {
   color: #136A82;
-  font-size: 25px;
+  font-size: 1.563rem;
   font-weight: 700;
   font-weight: bold;
 }
@@ -224,7 +224,7 @@ a:hover {
 }
 .section-call2actionOne p {
   color: #fff;
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .section-call2actionTwo {
@@ -232,7 +232,7 @@ a:hover {
 }
 .section-call2actionTwo h4 {
   color: #fff;
-  font-size: 25px;
+  font-size: 1.563rem;
   font-weight: 700;
   font-weight: bold;
 }
@@ -241,5 +241,5 @@ a:hover {
 }
 .section-call2actionTwo p {
   color: #fff;
-  font-size: 14px;
+  font-size: 0.875rem;
 }/*# sourceMappingURL=style.css.map */

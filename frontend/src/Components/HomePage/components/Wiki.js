@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import config from '../../../config';
 const Wiki = () =>{
     return(
@@ -13,29 +13,29 @@ const Wiki = () =>{
             <div className='row'>
             <div className='col-6 text-start'>
                 <h3>Resources</h3>
-                <p><a href="#0">About the Activities of the Yunus Social Business Research Center at Ryukoku University</a></p>
-                <p><a href="#0">Turkish Grameen Microfinance Program (TGMP) Earthquake Appeal</a></p>
-                <p><a href="#0">YYSA - The Social Business in Yamagata, Japan</a></p>
-                <p><a href="#0">Yunus Social Business Center</a></p>
-                <p><a href="#0">Yunus Social Business (YSB) Updates - January - September 2022</a></p>
-                <p><a href="#0">Professor Muhammad Yunus join hands with Yoshimoto Kogyo a leading entertainment company in Japan to form yunus-yoshimoto Social Action (yySA)</a></p>
+                <p><Link to="#0">About the Activities of the Yunus Social Business Research Center at Ryukoku University</Link></p>
+                <p><Link to="#0">Turkish Grameen Microfinance Program (TGMP) Earthquake Appeal</Link></p>
+                <p><Link to="#0">YYSA - The Social Business in Yamagata, Japan</Link></p>
+                <p><Link to="#0">Yunus Social Business Center</Link></p>
+                <p><Link to="#0">Yunus Social Business (YSB) Updates - January - September 2022</Link></p>
+                <p><Link to="#0">Professor Muhammad Yunus join hands with Yoshimoto Kogyo a leading entertainment company in Japan to form yunus-yoshimoto Social Action (yySA)</Link></p>
             </div>
             <div className='col-6 text-end'>
                 <h3>Yunus Library</h3>
-                <p><a href="#0">Professor Muhammad Yunus' Acceptance Speech in the Congressional Gold Medal Ceremony.</a></p>
-                <p><a href="#0">Is it possible to centralized the proverty? - Dr. Muhammad Yunus</a></p>
-                <p><a href="#0">Pariser platz rede lecture</a></p>
-                <p><a href="#0">Growing Up With Two Giants</a></p>
-                <p><a href="#0">7th Nelson Mandela Annual Lecture</a></p>
-                <p><a href="#0">Egon Zehnder International Speech</a></p>
-                <p><a href="#0">British Council Talking Without Borders Lecture</a></p>
+                <p><Link to="#0">Professor Muhammad Yunus' Acceptance Speech in the Congressional Gold Medal Ceremony.</Link></p>
+                <p><Link to="#0">Is it possible to centralized the proverty? - Dr. Muhammad Yunus</Link></p>
+                <p><Link to="#0">Pariser platz rede lecture</Link></p>
+                <p><Link to="#0">Growing Up With Two Giants</Link></p>
+                <p><Link to="#0">7th Nelson Mandela Annual Lecture</Link></p>
+                <p><Link to="#0">Egon Zehnder International Speech</Link></p>
+                <p><Link to="#0">British Council Talking Without Borders Lecture</Link></p>
             </div>
             </div>
         </div>
         <div className="text-center">
-          <a href="#0">
+          <Link to="#0">
             <button className='sbp25-btn'>View All</button>
-          </a>
+          </Link>
         </div>
     </section>        
             {/* <section className='row section-call2actionOne container-fluid py-5' style={{ backgroundColor: '#F8FBFF' }}>

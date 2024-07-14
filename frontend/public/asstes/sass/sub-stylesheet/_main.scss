@@ -1,13 +1,13 @@
 .section-title{ 
     p{
-        font-size: 32px;
+        font-size: $ssbl-fs-32;
         font-weight: 700;
-        line-height: 25px;
+        line-height: $ssbl-fs-25;
         color: #49ADA1;
     }
     span{
-        font-size: 14px;
-        line-height: 26px;
+        font-size: $ssbl-fs-14;
+        line-height: $ssbl-fs-25;
         color: rgba(0, 0, 0, 0.9);
     }
 }
@@ -20,14 +20,14 @@
             border: none;
             .card-body{
                 .card-title{
-                    font-size: 18px;
+                    font-size: $ssbl-fs-18;
                     font-weight: 700;
-                    line-height: 26px;
+                    line-height: $ssbl-fs-25;
                     color: rgba(0, 0, 0, 0.8);
                 }
                 .card-text{
-                    font-size: 14px;
-                    line-height: 26px;
+                    font-size: $ssbl-fs-14;
+                    line-height: $ssbl-fs-25;
                     color: rgba(0, 0, 0, 0.8);
                 }
             }
@@ -48,14 +48,14 @@
     background-color: #F8FBFF;
     // h3{
     //     color: #136A82;
-    //     // font-size: 18px;
+    //     // font-size: $ssbl-fs-18;
     //     font-weight: 700;
     //     font-weight: bold;
     // }
     p{
         a{
             color: rgba(0, 0, 0, 0.9);
-            font-size: 14px;
+            font-size: $ssbl-fs-14;
             &:hover{
                 color: #136A82;
             }
@@ -67,7 +67,7 @@
     background-color: #F8FBFF;
     h4{
         color: #136A82;
-        font-size: 25px;
+        font-size: $ssbl-fs-25;
         font-weight: 700;
         font-weight: bold;
         span{
@@ -76,14 +76,14 @@
     }
     p{
         color: #fff;
-        font-size: 14px;        
+        font-size: $ssbl-fs-14;        
     }
 }
 .section-call2actionTwo{
     background-color: #F8FBFF;
     h4{
         color: #fff;
-        font-size: 25px;
+        font-size: $ssbl-fs-25;
         font-weight: 700;
         font-weight: bold;
         span{
@@ -92,6 +92,6 @@
     }
     p{
         color: #fff;
-        font-size: 14px;        
+        font-size: $ssbl-fs-14;        
     }
 }

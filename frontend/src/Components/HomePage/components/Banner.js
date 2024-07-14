@@ -1,11 +1,12 @@
 import React, { useEffect }  from 'react';
 import config from '../../../config';
+import { Link } from 'react-router-dom';
 const Banner = () =>{
     useEffect(() => {  
       }, []);
     return(
         <>
-            <section className='section-banner' style={{ backgroundImage: `url(${config.FILE_URL + 'banner.png'})` }}>
+            <section className='section-banner' style={{ backgroundImage: `url(${config.FILE_URL + 'banner.png'})` , backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'inherit' }}>
                 <div className='container'>
                     <div className='row'>
                         <div className='col text-bottom'>
@@ -14,58 +15,58 @@ const Banner = () =>{
                         <div className='col'>
                             <div class='row my-5'>                               
                                 <div className='col-4 card py-1 m-2 text-center'>
-                                    <a href="#0">
+                                    <Link to="#0">
                                         <img src={config.FILE_URL + "icon-news.png"} alt='' className="nav-cow-img img-fluid me-1"/>
                                         Sb News & Media
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className='col-3 card py-1 m-2 text-center'>
-                                    <a href="#0">
+                                    <Link to="#0">
                                         <img src={config.FILE_URL + "icon-wiki.png"} alt='' className="nav-cow-img img-fluid me-1"/>
                                         SB Events
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className='col-3 card py-1 m-2 text-center'>
-                                    <a href="#0">
+                                    <Link to="#0">
                                         <img src={config.FILE_URL + "icon-world.png"} alt='' className="nav-cow-img img-fluid me-1"/>
                                         Sb World
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className='col-3 card py-1 m-2 text-center'>
-                                    <a href="#0">
+                                    <Link to="#0">
                                         <img src={config.FILE_URL + "icon-wiki.png"} alt='' className="nav-cow-img img-fluid me-1"/>
                                         Sb Wiki
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className='col-4 card py-1 m-2 text-center'>
-                                    <a href="#0">
+                                    <Link to="#0">
                                         <img src={config.FILE_URL + "icon-academia.png"} alt='' className="nav-cow-img img-fluid me-1"/>
                                         Sb Academia
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className='col-3 card py-1 m-2 text-center'>
-                                    <a href="#0">
+                                    <Link to="#0">
                                         <img src={config.FILE_URL + "icon-video.png"} alt='' className="nav-cow-img img-fluid me-1"/>
                                         Sb Video
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className='col-3 card py-1 m-2 text-center'>
-                                    <a href="#0">
+                                    <Link to="#0">
                                         <img src={config.FILE_URL + "icon-design-lab.png"} alt='' className="nav-cow-img img-fluid me-1"/>
                                         Design Lab
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className='col-3 card py-1 m-2 text-center'>
-                                    <a href="#0">
+                                    <Link to="#0">
                                         <img src={config.FILE_URL + "icon-book.png"} alt='' className="nav-cow-img img-fluid me-1"/>
                                         Publications
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className='col-4 card py-1 m-2 text-center'>
-                                    <a href="#0">
+                                    <Link to="#0">
                                         <img src={config.FILE_URL + "icon-sb.png"} alt='' className="nav-cow-img img-fluid me-1"/>
                                         Social Business
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

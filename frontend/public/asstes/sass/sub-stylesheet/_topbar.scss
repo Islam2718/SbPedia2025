@@ -10,7 +10,7 @@
             a{
                 line-height: 50px;
                 color: #49ADA1;
-                font-size: 14px;
+                font-size: $ssbl-fs-14;
                 margin-right: 15px;
                 &:hover{
                     color: #136A82;
@@ -21,6 +21,6 @@
     a{
         line-height: 50px;
         color: #1d6842;
-        font-size: 14px;
+        font-size: $ssbl-fs-14;
     }
 }

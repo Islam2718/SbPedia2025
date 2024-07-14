@@ -4,7 +4,7 @@ const CallToActionThree = () =>{
     return(
         <>
             <section className='section-call2actionOne py-5'>
-                <div className='col-10 mx-auto text-center bg-warning py-5 rounded'>
+                <div className='col-lg-10 col-xl-10 mx-auto text-center bg-warning py-5 rounded' style={{maxWidth: '1200px'}}>
                     <h4 className='text-center fw-bold'>11<sup>th</sup> Social Business Academic Conference</h4>
                     <p className='text-center'>Register to join the 11th Social Business Academic Conference.</p>
                     <div className='text-center'>
