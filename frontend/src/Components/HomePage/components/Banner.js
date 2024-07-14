@@ -6,13 +6,9 @@ const Banner = () =>{
       }, []);
     return(
         <>
-<<<<<<< HEAD
+
             <section className='section-banner' style={{ backgroundImage: `url(${config.FILE_URL + 'banner.png'})` , backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize: 'inherit' }}>
                 <div className='container'>
-=======
-            <section className='section-banner'>
-                <div className='container'  style={{ backgroundImage: `url(${config.FILE_URL + 'banner.png'})`, backgroundSize: '100% 100%', backgroundRepeat: 'no-repeat' }}>
->>>>>>> 2862246f504b0e8e36031cd07cb4de1d8e002ccd
                     <div className='row'>
                         <div className='col text-bottom'>
                             {/* left..  */}
