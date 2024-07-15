@@ -13,13 +13,18 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('people', function (Blueprint $table) {
+        Schema::create('news_categories', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('designation')->nullable();
-            $table->string('thumb')->nullable();
-            $table->string('signature_thumb')->nullable();
+            $table->string('parent_id')->nullable();
+
+            $table->text('alias')->nullable();
+            $table->string('name')->nullable();
+            $table->text('description')->nullable();
+            $table->string('language')->nullable();
+
+            $table->boolean('is_default')->default(true);
             $table->boolean('status')->default(true);
+
             $table->timestamps();
         });
     }
@@ -31,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('people');
+        Schema::dropIfExists('news_categories');
     }
 };
