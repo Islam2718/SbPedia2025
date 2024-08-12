@@ -13,18 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('news_categories', function (Blueprint $table) {
+        Schema::create('news_category_languages', function (Blueprint $table) {
             $table->id();
-            $table->string('parent_id')->nullable();
-
-            $table->text('alias')->nullable();
+            $table->integer('news_category_id')->nullable();
+            $table->integer('setting_language_id')->nullable();
             $table->string('name')->nullable();
             $table->text('description')->nullable();
-            $table->string('language')->nullable();
-
-            $table->boolean('is_default')->default(true);
-            $table->boolean('status')->default(true);
-
+            $table->integer('is_default')->default(0);
+            $table->biginteger('created_by')->nullable();
+            $table->biginteger('updated_by')->nullable();
+            
             $table->timestamps();
         });
     }
@@ -36,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('news_categories');
+        Schema::dropIfExists('news_category_languages');
     }
 };
