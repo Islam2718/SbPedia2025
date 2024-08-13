@@ -24,7 +24,7 @@
   <body>
 <div class="container">
     <div class="image-container">
-        <img src="logo.png" alt="Your Image">
+        <h1>Social Business Pedia - 2025</h1>
     </div>
 </div>
     <!-- Option 1: Bootstrap Bundle with Popper -->
