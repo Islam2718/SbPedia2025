@@ -1,19 +1,17 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Settings;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Person extends Model
+class Language extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'name',
-        'designation',
-        'thumb',
-        'signature_thumb',
+        'language_name',
+        'language_code',
         'status'
     ];
 }
