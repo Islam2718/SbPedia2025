@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>AAA Trade</title>
+    <title>SbPedia</title>
     <style>
         .container {
     display: flex;
@@ -23,8 +23,9 @@
   </head>
   <body>
 <div class="container">
-    <div class="image-container">
-        <img src="logo.png" alt="Your Image">
+    <div class="image-container text-center">
+        <img src="logo.png" alt="--">
+        <h1>SbPedia - 2025</h1>
     </div>
 </div>
     <!-- Option 1: Bootstrap Bundle with Popper -->

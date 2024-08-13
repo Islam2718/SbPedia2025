@@ -1,13 +1,13 @@
 <?php
-namespace App\Http\Controllers\API;
+namespace App\Http\Controllers\API\Settings;
 
 use App\Http\Controllers\Controller;
-use App\Models\Widget;
+use App\Models\Settings\Country;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 
-class WidgetController extends Controller
+class CountryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,7 +18,7 @@ class WidgetController extends Controller
     {
         //
         // if(Auth::guard('api')->check()){
-            $response = Widget::all();
+            $response = Country::all();
             if(!$response){
                 return Response(['message'=> 'Not Found', 'status'=> 404], 404);
             }
@@ -46,30 +46,30 @@ class WidgetController extends Controller
     public function store(Request $request): Response
     {
         //
-        if(Auth::guard('api')->check()){
+        // if(Auth::guard('api')->check()){
             $validatedData = $request->validate([
-                'title' => 'required',
+                'country_short_code' => 'required',
             ]);
-            if($response = Widget::create($request->all())){
+            if($response = Country::create($request->all())){
                 return Response(['data' => $response, 'message' => 'Saved Successfully !.'], 201);
             }else{
                 return Response(['data' => $request->all(), 'message' => 'Missing Field !.', 'status'=>400], 400);
             }
-        }
-        return Response(['data' => 'Unauthorized!'], 401);
+        // }
+        // return Response(['data' => 'Unauthorized!'], 401);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Widget  $widget
+     * @param  \App\Models\Country  $country
      * @return \Illuminate\Http\Response
      */
     public function show($id): Response
     {
         //
         // if(Auth::guard('api')->check()){        
-            $response = Widget::find($id);
+            $response = Country::find($id);
             if(!$response){
                 return Response(['message' => 'Not found !.', 'status'=>404], 404);
             }else{      
@@ -79,8 +79,8 @@ class WidgetController extends Controller
     }
     public function updateStatus($id): Response
     {
-        if(Auth::guard('api')->check()){             
-            $response = Widget::find($id);
+        // if(Auth::guard('api')->check()){             
+            $response = Country::find($id);
             if (!$response) {
                 return Response(['message' => 'Not found.', 'status'=>404], 404);
             }
@@ -88,8 +88,8 @@ class WidgetController extends Controller
             
             $response->save();
             return Response(['data' => $response, 'message' => 'Updated successfully.'], 200);
-        }
-        return Response(['data' => 'Unauthorized!'], 401);
+        // }
+        // return Response(['data' => 'Unauthorized!'], 401);
     }
     /**
      * Show the form for editing the specified resource.
@@ -112,18 +112,18 @@ class WidgetController extends Controller
     public function update(Request $request, $id): Response
     {
         //
-        if(Auth::guard('api')->check()){ 
+        // if(Auth::guard('api')->check()){ 
             $validatedData = $request->validate([
-                'title' => 'required',
+                'country_short_code' => 'required',
             ]);
-            $response = Widget::find($id);
+            $response = Country::find($id);
             if (!$response) {
                 return Response(['message' => 'Not found !.', 'status'=>404], 404);
             }
             $response->update($request->all());
             return Response(['data' => $response, 'message' => 'Updated successfully!.'], 200);
-        }
-        return Response(['data' => 'Unauthorized!'], 401);
+        // }
+        // return Response(['data' => 'Unauthorized!'], 401);
     }
 
     /**
@@ -135,14 +135,14 @@ class WidgetController extends Controller
     public function destroy($id): Response
     {
         //
-        if(Auth::guard('api')->check()){
-            $response = Widget::find($id);
+        // if(Auth::guard('api')->check()){
+            $response = Country::find($id);
             if (! $response) {
                 return Response(['data' => 'Not found !.'], 404);
             }
             $response->delete();
             return Response(['data' => 'Deleted Successfully !.'], 200);
-        }
-        return Response(['data' => 'Unauthorized!'], 401);
+        // }
+        // return Response(['data' => 'Unauthorized!'], 401);
     }
 }
