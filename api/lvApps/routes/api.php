@@ -15,6 +15,10 @@ use App\Http\Controllers\API\Settings\LanguageController;
 use App\Http\Controllers\API\SbMedia\PublicNewsController;
 use App\Http\Controllers\API\SbMedia\PublicNewsCategoryController;
 
+// sb media 
+use App\Http\Controllers\API\SbAcademia\PublicAcademiaController;
+use App\Http\Controllers\API\SbAcademia\PublicAcademiaCategoryController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -55,7 +59,10 @@ Route::post('login', [UserauthController::class, 'userLogin']);
     // sb media crud
     // Route::resource('news-category', NewsCategoryController::class)->only(['index', 'store', 'update', 'show', 'destroy']);    
     // Route::resource('news-category-language', NewsCategoryLanguageController::class)->only(['index', 'store', 'update', 'show', 'destroy']);
-    
+
+    // sb academia
+    Route::resource('academia', PublicAcademiaController::class)->only(['index']);
+    Route::resource('academia-category', PublicAcademiaCategoryController::class)->only(['index']);
 
     // Route::resource('upload', UploadController::class)->only(['index']);
     Route::get('files', 'App\Http\Controllers\API\UploadController@getAllFile');
