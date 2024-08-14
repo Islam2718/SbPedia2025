@@ -1,17 +1,15 @@
 <?php
-
-namespace App\Models\Settings;
+namespace App\Models\SbMedia;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Language extends Model
+class NewsCategoriesContent extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'language_name',
-        'language_code',
-        'status'
+        'news_content_id',
+        'news_category_id'
     ];
 }

@@ -11,6 +11,9 @@ use App\Http\Controllers\API\UploadController;
 // settings 
 use App\Http\Controllers\API\Settings\CountryController;
 use App\Http\Controllers\API\Settings\LanguageController;
+// sb media 
+use App\Http\Controllers\API\SbMedia\PublicNewsController;
+use App\Http\Controllers\API\SbMedia\PublicNewsCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,19 +43,19 @@ Route::post('login', [UserauthController::class, 'userLogin']);
     // Route::resource('site-info', SiteinfoController::class)->only(['update', 'show']);
     // Route::resource('uploads', FileUploadController::class)->only(['store']);
 
-    
+    // settings 
     Route::resource('country', CountryController::class)->only(['index', 'store', 'update', 'show', 'destroy']);
     Route::get('country/{id}/status', 'App\Http\Controllers\API\Settings\CountryController@updateStatus');
     Route::resource('language', LanguageController::class)->only(['index', 'store', 'update', 'show', 'destroy']);
     Route::get('language/{id}/status', 'App\Http\Controllers\API\Settings\LanguageController@updateStatus');
 
-    // Route::resource('section', SectionController::class)->only(['index', 'store', 'update', 'show', 'destroy']);
-
-    // Route::resource('news', NewsController::class)->only(['index', 'store', 'update', 'show', 'destroy']);
-    // Route::get('news/{id}/status', 'App\Http\Controllers\API\NewsController@updateStatus');
+    // sb media public 
+    Route::resource('news', PublicNewsController::class)->only(['index']);
+    Route::resource('news-category', PublicNewsCategoryController::class)->only(['index']);
+    // sb media crud
+    // Route::resource('news-category', NewsCategoryController::class)->only(['index', 'store', 'update', 'show', 'destroy']);    
+    // Route::resource('news-category-language', NewsCategoryLanguageController::class)->only(['index', 'store', 'update', 'show', 'destroy']);
     
-    // Route::resource('widget', WidgetController::class)->only(['index', 'store', 'update', 'show', 'destroy']);
-    // Route::get('widget/{id}/status', 'App\Http\Controllers\API\WidgetController@updateStatus');
 
     // Route::resource('upload', UploadController::class)->only(['index']);
     Route::get('files', 'App\Http\Controllers\API\UploadController@getAllFile');

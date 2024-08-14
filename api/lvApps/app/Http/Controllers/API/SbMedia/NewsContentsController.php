@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 
-class CountryController extends Controller
+class NewsContentsController extends Controller
 {
     /**
      * Display a listing of the resource.

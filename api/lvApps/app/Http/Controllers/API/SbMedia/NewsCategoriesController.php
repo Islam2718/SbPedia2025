@@ -1,13 +1,13 @@
 <?php
-namespace App\Http\Controllers\API\Settings;
+namespace App\Http\Controllers\API\SbMedia;
 
 use App\Http\Controllers\Controller;
-use App\Models\Settings\Country;
+use App\Models\SbMedia\NewsCategory;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 
-class CountryController extends Controller
+class NewsCategoriesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,7 +18,7 @@ class CountryController extends Controller
     {
         //
         // if(Auth::guard('api')->check()){
-            $response = Country::all();
+            $response = NewsCategory::all();
             if(!$response){
                 return Response(['message'=> 'Not Found', 'status'=> 404], 404);
             }
