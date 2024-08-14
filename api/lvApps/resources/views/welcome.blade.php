@@ -23,6 +23,8 @@
   </head>
   <body>
 <div class="container">
+    <div class="image-container">
+        <h1>Social Business Pedia - 2025</h1>
     <div class="image-container text-center">
         <img src="logo.png" alt="--">
         <h1>SbPedia - 2025</h1>
