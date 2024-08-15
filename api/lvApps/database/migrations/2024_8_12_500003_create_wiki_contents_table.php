@@ -29,7 +29,6 @@ return new class extends Migration
             $table->string('is_file')->nullable();
             $table->string('file_type')->nullable();
             $table->string('file_name')->nullable();
-            $table->string('country_id')->nullable();
             $table->string('is_top_news')->nullable();
             $table->string('is_featured')->nullable();
             $table->string('is_organization')->nullable();

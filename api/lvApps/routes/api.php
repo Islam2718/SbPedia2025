@@ -15,9 +15,12 @@ use App\Http\Controllers\API\Settings\LanguageController;
 use App\Http\Controllers\API\SbMedia\PublicNewsController;
 use App\Http\Controllers\API\SbMedia\PublicNewsCategoryController;
 
-// sb media 
+// sb academia 
 use App\Http\Controllers\API\SbAcademia\PublicAcademiaController;
 use App\Http\Controllers\API\SbAcademia\PublicAcademiaCategoryController;
+// sb wiki
+use App\Http\Controllers\API\SbWiki\PublicWikiController;
+use App\Http\Controllers\API\SbWiki\PublicWikiCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -63,6 +66,10 @@ Route::post('login', [UserauthController::class, 'userLogin']);
     // sb academia
     Route::resource('academia', PublicAcademiaController::class)->only(['index']);
     Route::resource('academia-category', PublicAcademiaCategoryController::class)->only(['index']);
+
+    // sb wiki
+    Route::resource('wiki', PublicWikiController::class)->only(['index']);
+    Route::resource('wiki-category', PublicWikiCategoryController::class)->only(['index']);
 
     // Route::resource('upload', UploadController::class)->only(['index']);
     Route::get('files', 'App\Http\Controllers\API\UploadController@getAllFile');

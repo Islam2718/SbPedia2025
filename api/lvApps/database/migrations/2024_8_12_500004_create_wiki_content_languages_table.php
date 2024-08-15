@@ -24,6 +24,7 @@ return new class extends Migration
             $table->biginteger('created_by')->nullable();
             $table->biginteger('updated_by')->nullable();
             $table->string('status')->default('pending');
+            $table->biginteger('activity_id')->nullable();
             
             $table->timestamps();
         });
