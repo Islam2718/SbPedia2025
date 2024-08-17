@@ -1,0 +1,23 @@
+//@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+// Core variables and mixins
+@import "master-stylesheet/_variables";
+@import "master-stylesheet/_mixins";
+
+// sweet alert 
+//@import "../../node_modules/sweetalert2/src/sweetalert2.scss";
+// sweet alert 
+// @import "../../node_modules/swiper/swiper.scss";
+// animation css
+//@import "../../node_modules/animate-scss/animate.scss";
+
+// Core CSS
+@import "master-stylesheet/_global";
+@import "master-stylesheet/_header";
+@import "master-stylesheet/_banner";
+@import "master-stylesheet/_main";
+@import "theme-stylesheet/_about";
+
+// Components
