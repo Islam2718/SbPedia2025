@@ -17,13 +17,9 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
 
         \App\Models\User::factory()->create([
-            'name' => 'SystemAdmin',
+            'username' => 'SystemAdmin',
             'email' => 'system@mail.com',
-            'phone' => '+8801710001337',
-            'firstname' => 'Super',
-            'lastname' => 'Admin',
-            'profile_img' => '',
-            'type' => 'SUPERADMIN',
+            // 'type' => 'SUPERADMIN',
             'password' => bcrypt(123456),
         ]);
 
