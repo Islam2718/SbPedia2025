@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { Navigation } from 'swiper/modules';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 function News() {
@@ -16,7 +16,7 @@ function News() {
             <div className="py-4">
                 <div className="row focus-news p-3 pt-5 rounded">
                     <div className="col-md-6">
-                    <a href="">
+                    <a href="#0">
                         <img src="https://socialbusinesspedia.com/uploads/news/845x400/ua_300844088509068813070624533273.png" alt="n/a" className="img-fluid news-banner" />                        
                     </a>
                     </div>

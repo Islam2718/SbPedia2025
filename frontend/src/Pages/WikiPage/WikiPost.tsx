@@ -13,9 +13,9 @@ interface Data {
   order: string;
   created_at: string | null;
   updated_at: string | null;
-  news_category_language: NewsCategoryLanguage[];
+  wiki_category_language: WikiCategoryLanguage[];
 }
-interface NewsCategoryLanguage {
+interface WikiCategoryLanguage {
   id: number;
   news_category_id: string;
   setting_language_id: string;
@@ -27,7 +27,7 @@ interface NewsCategoryLanguage {
   created_at: string | null;
   updated_at: string | null;
 }
-export interface NewsItem {
+export interface WikiItem {
     id: number;
     person_id: string;
     alias: string;
@@ -56,12 +56,12 @@ export interface NewsItem {
     file_name: string | null;
     created_at: string;
     updated_at: string;
-    news_content_languages: NewsContentLanguage[];
+    wiki_content_languages: WikiContentLanguage[];
   }
   // Interface for the news content languages
-export interface NewsContentLanguage {
+export interface WikiContentLanguage {
     id: number;
-    news_content_id: string;
+    wiki_content_id: string;
     setting_language_id: string;
     title: string;
     sub_title: string;
@@ -80,8 +80,8 @@ export interface NewsContentLanguage {
 function WikiPost() {
     const [data, setData] = useState<Data[] | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
-    const [error, setError] = useState<string | null>(null);
-    const [newsData, setNewsData] = useState<NewsItem[] | null>(null);
+    const [, setError] = useState<string | null>(null);
+    const [, setWikiData] = useState<WikiItem[] | null>(null);
 
     useEffect(() => {
       const fetchData = async () => {
@@ -105,7 +105,7 @@ function WikiPost() {
           const response = await axios.get(config.API_URL_LIVE + config.WIKI + '?lang=1&page=1&size=20');
           
           if (response.status === 200) {
-            setNewsData(response.data.data); // Set the news data from the response
+            setWikiData(response.data.data); // Set the news data from the response
           } else {
             setError(`Error: ${response.status}`);
           }
@@ -130,13 +130,13 @@ function WikiPost() {
                         <ul className="d-flex m-0 p-0 flex-wrap justify-content-center news-tab-menu">
                         {/* Static "All News" Item */}
                         <li className="p-2">
-                            <Link to="/news" className="page-sub-menu page-sub-menu-active">All News</Link>
+                            <Link to="/wiki" className="page-sub-menu page-sub-menu-active">All News</Link>
                         </li>
                         {/* Dynamically loop over the data */}
                         {data.map((item, index) => (
                             <li key={index} className="p-2">
                             <Link to={`/news/${item.alias}`} className="page-sub-menu">
-                                {item.news_category_language[0]?.name}
+                                {item.wiki_category_language[0]?.name}
                             </Link>
                             </li>
                         ))}

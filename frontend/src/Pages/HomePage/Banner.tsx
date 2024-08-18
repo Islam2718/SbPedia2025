@@ -133,7 +133,7 @@ function Banner() {
             </div>  
         </div>
         <div className="banner-img-area">
-            <a href="https://socialbusinesspedia.com/events/sbd2024" target="_blank">
+            <a href="https://socialbusinesspedia.com/events/sbd2024" target="_blank" rel="noreferrer">
                 <img src="./images/hot-banner.png" alt="n/a" className="img-fluid w-100" />
             </a>
         </div>
