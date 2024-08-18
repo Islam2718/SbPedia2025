@@ -21,6 +21,8 @@ use App\Http\Controllers\API\SbAcademia\PublicAcademiaCategoryController;
 // sb wiki
 use App\Http\Controllers\API\SbWiki\PublicWikiController;
 use App\Http\Controllers\API\SbWiki\PublicWikiCategoryController;
+// designlab
+use App\Http\Controllers\API\DesignLab\PublicDesignLabController;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,6 +72,10 @@ Route::post('login', [UserauthController::class, 'userLogin']);
     // sb wiki
     Route::resource('wiki', PublicWikiController::class)->only(['index']);
     Route::resource('wiki-category', PublicWikiCategoryController::class)->only(['index']);
+
+    // design lab 
+    Route::resource('design-lab', PublicDesignLabController::class)->only(['index']);    
+    // Route::resource('wiki-category', PublicWikiCategoryController::class)->only(['index']);
 
     // Route::resource('upload', UploadController::class)->only(['index']);
     Route::get('files', 'App\Http\Controllers\API\UploadController@getAllFile');
