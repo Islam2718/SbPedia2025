@@ -59,7 +59,7 @@ Route::post('login', [UserauthController::class, 'userLogin']);
     Route::get('language/{id}/status', 'App\Http\Controllers\API\Settings\LanguageController@updateStatus');
 
     // sb media public 
-    Route::resource('news', PublicNewsController::class)->only(['index']);
+    Route::resource('news', PublicNewsController::class)->only(['index', 'show']);
     Route::resource('news-category', PublicNewsCategoryController::class)->only(['index']);
     // sb media crud
     // Route::resource('news-category', NewsCategoryController::class)->only(['index', 'store', 'update', 'show', 'destroy']);    

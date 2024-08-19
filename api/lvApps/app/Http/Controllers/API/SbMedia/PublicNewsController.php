@@ -14,104 +14,28 @@ class PublicNewsController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
-     */
-    // public function index(Request $request): Response
-    // {
-    //     // Get page and size from request parameters with default values
-    //     $page = $request->input('page', 1);
-    //     $size = $request->input('size', 20);
-    
-    //     // Fetch paginated news content
-    //     $response = NewsContent::paginate($size, ['*'], 'page', $page);
-    
-    //     // Check if response has data
-    //     if ($response->isEmpty()) {
-    //         return Response(['message' => 'Not Found', 'status' => 404], 404);
-    //     }
-    
-    //     // Return paginated data
-    //     return Response([
-    //         'data' => $response->items(),
-    //         'current_page' => $response->currentPage(),
-    //         'last_page' => $response->lastPage(),
-    //         'per_page' => $response->perPage(),
-    //         'total' => $response->total(),
-    //         'status' => 200
-    //     ], 200);
-    // }
-
-    // public function index(Request $request): Response
-    // {
-    //     // Get page and size from request parameters with default values
-    //     $page = $request->input('page', 1);
-    //     $size = $request->input('size', 10);
-    
-    //     // Fetch paginated news content with join
-    //     $response = NewsContent::select('news_contents.*', 'news_content_languages.*')
-    //         ->join('news_content_languages', 'news_contents.id', '=', 'news_content_languages.news_content_id')
-    //         ->paginate($size, ['*'], 'page', $page);
-    
-    //     // Check if response has data
-    //     if ($response->isEmpty()) {
-    //         return Response(['message' => 'Not Found', 'status' => 404], 404);
-    //     }
-    
-    //     // Return paginated data
-    //     return Response([
-    //         'data' => $response->items(),
-    //         'current_page' => $response->currentPage(),
-    //         'last_page' => $response->lastPage(),
-    //         'per_page' => $response->perPage(),
-    //         'total' => $response->total(),
-    //         'status' => 200
-    //     ], 200);
-    // }
-    // public function index(Request $request): Response
-    // {
-    //     // Get page and size from request parameters with default values
-    //     $page = $request->input('page', 1);
-    //     $size = $request->input('size', 30);
-    //     $lang = $request->input('lang', 1);
-
-    //     // Fetch paginated news content with related languages
-    //     $response = NewsContent::with(
-    //         ['news_content_languages' => function ($query) use ($lang) {
-    //             if ($lang) {
-    //                 $query->where('setting_language_id', $lang);
-    //             }
-    //         }]
-    //     )->paginate($size, ['*'], 'page', $page);
-    
-    //     // Check if response has data
-    //     if ($response->isEmpty()) {
-    //         return Response(['message' => 'Not Found', 'status' => 404], 404);
-    //     }
-    
-    //     // Return paginated data
-    //     return Response([
-    //         'data' => $response->items(),
-    //         'current_page' => $response->currentPage(),
-    //         'last_page' => $response->lastPage(),
-    //         'per_page' => $response->perPage(),
-    //         'total' => $response->total(),
-    //         'status' => 200
-    //     ], 200);
-    // }
+     */    
     public function index(Request $request): Response
     {
         // Get page, size, and lang from request parameters with default values
         $page = $request->input('page', 1);
         $size = $request->input('size', null);
-        $lang = $request->input('lang', null); // Default lang is 1
-    
+        $lang = 1; if ($request->has('lang')) { $lang = $request->input('lang'); }
+        $searchKey = $request->input('search-key', null);
+        
         // Eager load the related languages, filtered by setting_language_id if lang is provided
-        $query = NewsContent::with(['news_content_languages' => function ($query) use ($lang) {
-            if ($lang) {
-                $query->where('setting_language_id', $lang);
-            }
-        }]);
-    
-        // Paginate the results
+        $query = NewsContent::with(['news_content_languages' => function($query) use ($lang) {
+            $query->where('setting_language_id', $lang);
+        }])->orderBy('id', 'desc');
+        
+        // Filter by searchKey if provided
+        if ($searchKey) {
+            $query->whereHas('news_content_languages', function ($query) use ($searchKey) {
+                $query->where('title', 'like', '%' . $searchKey . '%');
+            });
+        }
+
+        // Execute the query to retrieve the results
         $response = $query->paginate($size, ['*'], 'page', $page);
     
         // Check if response has data and if languages are not empty
@@ -132,5 +56,20 @@ class PublicNewsController extends Controller
             'total' => $response->total(),
             'status' => 200
         ], 200);
+    }
+
+    /**
+     * get by id.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id){
+        $response = NewsContent::with('news_content_languages')->find($id);
+        if (!$response) {
+            return Response(['message' => 'Not Found', 'status' => 404], 404);
+        }
+
+        return Response(['data' => $response, 'status' => 200], 200);
     }
 }
