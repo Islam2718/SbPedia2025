@@ -1,40 +1,58 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import axios from 'axios';
 import config from '../../config';
 import { useEffect, useState } from 'react';
-interface WikiCategoryItem {
-    id: number;
-    parent_id: string;
-    alias: string;
-    status: string;
-    order: string;
-    created_at: string | null;
-    updated_at: string | null;
-    wiki_category_language: WikiCategoryLanguage[];
-  }
-  
-  interface WikiCategoryLanguage {
-    id: number;
-    wiki_category_id: string;
-    setting_language_id: string;
-    name: string;
-    description: string;
-    is_default: string;
-    created_by: string;
-    updated_by: string;
-    created_at: string;
-    updated_at: string;
-  }
+interface AcademiaCategoryLanguage {
+  id: number;
+  academia_category_id: string;
+  setting_language_id: string;
+  name: string;
+  description: string | null;
+  is_default: string;
+  created_by: string;
+  updated_by: string;
+  created_at: string;
+  updated_at: string;
+}
 
-function WikiBanner() {
-    const [data, setData] = useState<WikiCategoryItem[] | null>(null);
+interface AcademiaCategory {
+  id: number;
+  parent_id: string;
+  alias: string;
+  status: string;
+  order: string;
+  created_at: string | null;
+  updated_at: string | null;
+  academia_category_language: AcademiaCategoryLanguage[];
+}
+
+interface AcademiaCategoryResponse {
+  data: AcademiaCategory[];
+  current_page: number;
+  last_page: number;
+  per_page: number;
+  total: number;
+  status: number;
+}
+
+
+function AcademiaBanner() {
+    const [data, setData] = useState<AcademiaCategory[] | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
+    let { details } = useParams();
+    if(details == 'sb-academia') {
+      details = 'sb-academia'
+    }
+    else{
+      details = 'sb-academia/' + details
+    }
+    console.log(details);
     useEffect(() => {
         const fetchData = async () => {
           try {
-            const response = await axios.get(config.API_URL_LIVE + config.WIKI_CATEGORY + '?lang=1&page=1&size=20');
+            const response = await axios.get(config.API_URL_LIVE + config.ACADEMIA_CATEGORY + '?lang=1&page=1&size=20');
             // Check for status
             if (response.status === 200) {
               setData(response.data.data); // Set the data from the API response
@@ -54,11 +72,11 @@ function WikiBanner() {
     <div>
         <section className="news-page-banner text-center">
             <div className="news-banner py-5" style={{backgroundImage: "url(/ThemePublic/images/news-banner.png)"}}>
-                <h1>Wiki</h1>
+                <h1>Academia</h1>
                 <div className="d-flex justify-content-center breadcrumb">
                     <ol className="breadcrumb">
                         <li className="breadcrumb-item"><Link to="/"><i className="fa-solid fa-house"></i>  Home</Link></li>
-                        <li className="breadcrumb-item active" aria-current="page"><Link to="/news">Wiki</Link></li>
+                        <li className="breadcrumb-item active" aria-current="page"><Link to="/sb-academia">Academia</Link></li>
                     </ol>
                 </div>
                 <div className="search-input col-5 mx-auto border-bottom">
@@ -81,16 +99,24 @@ function WikiBanner() {
                       <ul className="d-flex m-0 p-0 flex-wrap justify-content-center news-tab-menu">
                       {/* Static "All Wiki" Item */}
                       <li className="p-2">
-                        <Link to="/wiki" className="page-sub-menu page-sub-menu-active">All Wiki</Link>
+                      <Link
+                        to="/sb-academia"
+                        className={`page-sub-menu ${details && data.find(item => details === 'sb-academia') ? 'page-sub-menu-active' : ''}`}
+                      >
+                        All Academia
+                      </Link>
                       </li>
                       {/* Dynamically loop over the data */}
                       {data.map((item, index) => {
                         if (item.status === '1') {
                           return (
                             <li key={index} className="p-2">
-                              <Link to={`/wiki/${item.alias}`} className="page-sub-menu">
-                                {item.wiki_category_language[0]?.name}
-                              </Link>
+                              <Link
+                                to={`/sb-academia/${item.alias}`}
+                                className={`page-sub-menu ${details === item.alias ? 'page-sub-menu-active' : ''}`}
+                              >
+                                {item.academia_category_language[0]?.name}
+                                </Link>
                             </li>
                           );
                         }
@@ -105,4 +131,4 @@ function WikiBanner() {
   )
 }
 
-export default WikiBanner
+export default AcademiaBanner

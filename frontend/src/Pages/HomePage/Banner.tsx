@@ -1,7 +1,7 @@
 import React from 'react'
 import { Swiper, SwiperSlide  } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
-
+import { Link } from 'react-router-dom';
 // Import Swiper styles
 import 'swiper/css';
 function Banner() {
@@ -68,60 +68,60 @@ function Banner() {
                             <SwiperSlide>
                                 <div className="swiper-slide swiper-slide-item rounded-2 my-3 py-2 sb-shadow d-flex align-items-center">
                                     <div className="icon-area ps-2">
-                                        <a href="/news"><img src="./images/slider_news.png" alt="n/a" className="img-fluid light-theme-logo" /></a>
+                                        <Link to="/news"><img src="./images/slider_news.png" alt="n/a" className="img-fluid light-theme-logo" /></Link>
                                     </div>
                                     <div className="slider-content px-2">
-                                        <a href="/news" className="btn-menu-default"><strong>SB News &amp; Media</strong><small><br />Photo &amp; Video Gallary</small></a>
+                                        <Link to="/news" className="btn-menu-default"><strong>SB News &amp; Media</strong><small><br />Photo &amp; Video Gallary</small></Link>
                                     </div>
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide>
                             <div className="swiper-slide swiper-slide-item rounded-2 my-3 py-2 sb-shadow d-flex align-items-center">
                                     <div className="icon-area ps-2">
-                                        <a href="/events"><img src="./images/sb-event-slide.png" alt="n/s" className="img-fluid light-theme-logo" /></a>
+                                        <Link to="/events"><img src="./images/sb-event-slide.png" alt="n/s" className="img-fluid light-theme-logo" /></Link>
                                     </div>
                                     <div className="slider-content px-2">
-                                        <a href="/events" className="btn-menu-default"><strong>SB Events</strong><small><br />Social Business Events</small></a>
+                                        <Link to="/events" className="btn-menu-default"><strong>SB Events</strong><small><br />Social Business Events</small></Link>
                                     </div>
                                 </div>    
                             </SwiperSlide>
                             <SwiperSlide>
                                 <div className="swiper-slide swiper-slide-item rounded-2 my-3 py-2 sb-shadow d-flex align-items-center">                            
                                     <div className="icon-area ps-2">
-                                        <a href="/sbworld"><img src="./images/slider_world.png" alt="n/s" className="img-fluid light-theme-logo" /></a>
+                                        <Link to="/sbworld"><img src="./images/slider_world.png" alt="n/s" className="img-fluid light-theme-logo" /></Link>
                                     </div>
                                     <div className="slider-content px-2">
-                                        <a href="/sbworld" className="btn-menu-default"><strong>SB World</strong><small><br />Social Business World</small></a>
+                                        <Link to="/sbworld" className="btn-menu-default"><strong>SB World</strong><small><br />Social Business World</small></Link>
                                     </div>
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide>
                                 <div className="swiper-slide swiper-slide-item rounded-2 my-3 py-2 sb-shadow d-flex align-items-center">
                                     <div className="icon-area ps-2">
-                                        <a href="/wiki"><img src="./images/slider_wiki.png" alt="n/s" className="img-fluid light-theme-logo" /></a>
+                                        <Link to="/wiki"><img src="./images/slider_wiki.png" alt="n/s" className="img-fluid light-theme-logo" /></Link>
                                     </div>
                                     <div className="slider-content px-2">
-                                        <a href="/wiki" className="btn-menu-default"><strong>SB Wiki</strong><small><br/>Future of Human Beings</small></a>
+                                        <Link to="/wiki" className="btn-menu-default"><strong>SB Wiki</strong><small><br/>Future of Human Beings</small></Link>
                                     </div>
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide>
                                 <div className="swiper-slide swiper-slide-item rounded-2 my-3 py-2 sb-shadow d-flex align-items-center">
                                     <div className="icon-area ps-2">
-                                        <a href="/sb-academia"><img src="./images/slider_wiki.png" alt="n/s" className="img-fluid light-theme-logo" /></a>
+                                        <Link to="/sb-academia"><img src="./images/slider_wiki.png" alt="n/s" className="img-fluid light-theme-logo" /></Link>
                                     </div>
                                     <div className="slider-content px-2">
-                                        <a href="/sb-academia" className="btn-menu-default"><strong>SB Academia</strong><small><br/>Publishing Research</small></a>
+                                        <Link to="/sb-academia" className="btn-menu-default"><strong>SB Academia</strong><small><br/>Publishing Research</small></Link>
                                     </div>
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide>
                                 <div className="swiper-slide swiper-slide-item rounded-2 my-3 py-2 sb-shadow d-flex align-items-center">
                                     <div className="icon-area ps-2">
-                                        <a href="/designlab"><img src="./images/slider_design.png" alt="n/s" className="img-fluid light-theme-logo" /></a>
+                                        <Link to="/designlab"><img src="./images/slider_design.png" alt="n/s" className="img-fluid light-theme-logo" /></Link>
                                     </div>
                                     <div className="slider-content px-2">
-                                        <a href="/designlab" className="btn-menu-default"><strong>Design Lab</strong><small><br/>Betterment of society</small></a>
+                                        <Link to="/designlab" className="btn-menu-default"><strong>Design Lab</strong><small><br/>Betterment of society</small></Link>
                                     </div>
                                 </div>
                             </SwiperSlide>
@@ -133,9 +133,9 @@ function Banner() {
             </div>  
         </div>
         <div className="banner-img-area">
-            <a href="https://socialbusinesspedia.com/events/sbd2024" target="_blank" rel="noreferrer">
+            <Link to="https://socialbusinesspedia.com/events/sbd2024" target="_blank">
                 <img src="./images/hot-banner.png" alt="n/a" className="img-fluid w-100" />
-            </a>
+            </Link>
         </div>
     </section>
     </div>

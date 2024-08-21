@@ -4,102 +4,65 @@ import config from '../../config'
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-interface Data {
-  id: number;
-  parent_id: string;
-  alias: string;
-  status: string;
-  is_default: string;
-  order: string;
-  created_at: string | null;
-  updated_at: string | null;
-  wiki_category_language: WikiCategoryLanguage[];
+interface WikiApiResponse {
+  data: WikiItem[];
+  current_page: number;
+  last_page: number;
+  per_page: number;
+  total: number;
+  status: number;
 }
-interface WikiCategoryLanguage {
+
+interface WikiItem {
   id: number;
-  news_category_id: string;
+  person_id: string;
+  alias: string;
+  featured_image: string | null;
+  tags: string | null;
+  link_type: string;
+  custom_link: string;
+  is_target_blank: string;
+  order: string;
+  status: string;
+  activity_id: string;
+  live_edited_by: string | null;
+  is_file: string;
+  file_type: string | null;
+  file_name: string | null;
+  country_id: string | null;
+  is_top_news: string;
+  is_featured: string;
+  is_organization: string;
+  publish_date: string | null;
+  created_at: string;
+  updated_at: string;
+  wiki_content_language: WikiContentLanguage[];
+}
+
+interface WikiContentLanguage {
+  id: number;
+  wiki_content_id: string;
   setting_language_id: string;
+  title: string;
   name: string;
-  description: string;
+  content: string;
   is_default: string;
   created_by: string;
   updated_by: string;
-  created_at: string | null;
-  updated_at: string | null;
+  status: string;
+  activity_id: string;
+  created_at: string;
+  updated_at: string;
 }
-export interface WikiItem {
-    id: number;
-    person_id: string;
-    alias: string;
-    is_top_news: string;
-    is_featured: string;
-    is_organization_news: string;
-    organization_id: string;
-    is_user_news: string | null;
-    featured_image: string;
-    tags: string | null;
-    link_type: string;
-    custom_link: string | null;
-    is_target_blank: string | null;
-    order: string;
-    status: string;
-    approve_status: string;
-    publish_date: string;
-    country_id: string;
-    country_name: string | null;
-    city_name: string | null;
-    organization_name: string | null;
-    activity_id: string;
-    live_edited_by: string | null;
-    is_file: string;
-    file_type: string | null;
-    file_name: string | null;
-    created_at: string;
-    updated_at: string;
-    wiki_content_languages: WikiContentLanguage[];
-  }
-  // Interface for the news content languages
-export interface WikiContentLanguage {
-    id: number;
-    wiki_content_id: string;
-    setting_language_id: string;
-    title: string;
-    sub_title: string;
-    name: string;
-    content: string;
-    featured_image: string | null;
-    is_default: string;
-    created_by: string;
-    updated_by: string;
-    status: string;
-    activity_id: string;
-    created_at: string;
-    updated_at: string;
-  }
+
+
   
 function WikiPost() {
-    const [data, setData] = useState<Data[] | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
-    const [, setError] = useState<string | null>(null);
-    const [, setWikiData] = useState<WikiItem[] | null>(null);
+    const [error, setError] = useState<string | null>(null);
+    const [wikiData, setWikiData] = useState<WikiItem[] | null>(null);
 
     useEffect(() => {
-      const fetchData = async () => {
-        try {
-          const response = await axios.get(config.API_URL_LIVE + config.WIKI_CATEGORY + '?lang=1&page=1&size=20');
-          // Check for status
-          if (response.status === 200) {
-            setData(response.data.data); // Set the data from the API response
-            console.log(response.data.data);
-          } else {
-            setError(`Error: ${response.status}`);
-          }
-        } catch (err) {
-          setError('Failed to fetch data.');
-        } finally {
-          setLoading(false);
-        }
-      };
       const fetchNews = async () => {
         try {
           const response = await axios.get(config.API_URL_LIVE + config.WIKI + '?lang=1&page=1&size=20');
@@ -117,34 +80,9 @@ function WikiPost() {
       };
   
       fetchNews();
-      fetchData();
     }, []);
   return (
     <div>
-        <section className="page-content-top-menu">
-            <div className="shadow border-top pt-2">
-                <div className="container py-2">
-                    {loading && <p>Loading...</p>}
-                    {/* {error && <p>{error}</p>} */}
-                    {data && (
-                        <ul className="d-flex m-0 p-0 flex-wrap justify-content-center news-tab-menu">
-                        {/* Static "All News" Item */}
-                        <li className="p-2">
-                            <Link to="/wiki" className="page-sub-menu page-sub-menu-active">All News</Link>
-                        </li>
-                        {/* Dynamically loop over the data */}
-                        {data.map((item, index) => (
-                            <li key={index} className="p-2">
-                            <Link to={`/news/${item.alias}`} className="page-sub-menu">
-                                {item.wiki_category_language[0]?.name}
-                            </Link>
-                            </li>
-                        ))}
-                        </ul>
-                    )}
-                </div>
-            </div>
-        </section>
         <section className="section-top-news py-5">
             <div className="container">
                 {/* <div className="row">             */}
@@ -213,7 +151,133 @@ function WikiPost() {
                 <div className="row">
                 {loading && <p>Loading...</p>}
                 {/* {error && <p>{error}</p>} */}
+                {wikiData && wikiData.length > 0 && (
+                    <>
+                    {/* First Item */}
+                    <div className="col-md-8 col-lg-8 col-sm-12">
+                        <div className="mt-4 p-4 sb-shadow bg-box rounded">
+                        <img
+                            src={`https://socialbusinesspedia.com/uploads/news/845x400/${wikiData[0]?.featured_image}`}
+                            alt=""
+                            className="img-fluid w-100 card-image cap rounded"
+                        />
+                        <div className="card-body py-4">
+                            <h5 className="card-title">
+                            <Link to={`/wiki/details/${wikiData[0]?.id}/${wikiData[0]?.alias}`}>
+                                {wikiData[0]?.wiki_content_language[0]?.title}
+                            </Link>
+                            </h5>
+                            <div className="my-1 py-1 news-status-bar">
+                            <small className="link-text">
+                                <i className="fa-solid fa-calendar"></i> {wikiData[0]?.publish_date}
+                            </small>
+                            &nbsp;
+                            <small className="link-text">
+                                <i className="fa-solid fa-folder"></i> By - {wikiData[0]?.person_id}
+                            </small>
+                            &nbsp;
+                            <small className="link-text">
+                                <i className="fa-solid fa-user-large"></i> SBP
+                            </small>
+                            </div>
+                            <p className="card-text my-1 py-2" dangerouslySetInnerHTML={{__html: wikiData[0]?.wiki_content_language[0]?.content}}
+                                style={{  display: '-webkit-box',
+                                    WebkitLineClamp: '2',
+                                    WebkitBoxOrient: 'vertical',
+                                    overflow: 'hidden',
+                                    textOverflow: 'ellipsis',}}
+                            >
+                            </p>
+                            <Link
+                            to={`/wiki/details/${wikiData[0]?.id}/${wikiData[0]?.alias}`}
+                            className="btn-sb-primary btn btn-primary border-0 news-btn py-2 px-4"
+                            >
+                            Read More <i className="fa-solid fa-angle-right"></i>
+                            </Link>
+                        </div>
+                        </div>
+                    </div>
 
+                    {/* Second and Third Items */}
+                    {wikiData.slice(1, 3).map((newsItem, index) => (
+                        <div className="col-md-4 col-lg-4 col-sm-12" key={newsItem.id}>
+                        <div className="p-4 sb-shadow bg-box rounded mt-4">
+                            <img
+                            src={`https://socialbusinesspedia.com/uploads/news/845x400/${newsItem.featured_image}`}
+                            alt=""
+                            className="img-fluid w-100 card-image cap rounded"
+                            />
+                            <div className="my-1 py-1 news-status-bar-onright">
+                            <small className="link-text">
+                                <i className="fa-solid fa-clock"></i> {newsItem.publish_date}
+                            </small>
+                            </div>
+                            <div className="card-body">
+                            <h5 className="card-title">
+                                <Link to={`/wiki/details/${newsItem.id}/${newsItem.alias}`}>
+                                {newsItem.wiki_content_language[0]?.title}
+                                </Link>
+                            </h5>
+                            <p className="card-text my-1 py-2" dangerouslySetInnerHTML={{__html: newsItem.wiki_content_language[0]?.content}}
+                            style={{  display: '-webkit-box',
+                                WebkitLineClamp: '2',
+                                WebkitBoxOrient: 'vertical',
+                                overflow: 'hidden',
+                                textOverflow: 'ellipsis',}}
+                            >
+                            
+                            </p>
+                            <Link
+                                to={`/wiki/details/${newsItem.id}/${newsItem.alias}`}
+                                className="btn-link"
+                            >
+                                Read More <i className="fa-solid fa-angle-right"></i>
+                            </Link>
+                            </div>
+                        </div>
+                        </div>
+                    ))}
+
+                    {/* Rest of the Items */}
+                    {wikiData.slice(3).map((newsItem) => (
+                        <div className="col-md-4 col-lg-4 col-sm-12" key={newsItem.id}>
+                        <div className="p-4 sb-shadow bg-box rounded mt-4">
+                            <img
+                            src={`https://socialbusinesspedia.com/uploads/news/845x400/${newsItem.featured_image}`}
+                            alt=""
+                            className="img-fluid w-100 card-image cap rounded"
+                            />
+                            <div className="my-1 py-1 news-status-bar-onright">
+                            <small className="link-text">
+                                <i className="fa-solid fa-clock"></i> {newsItem.publish_date}
+                            </small>
+                            </div>
+                            <div className="card-body">
+                            <h5 className="card-title">
+                                <Link to={`/news/details/${newsItem.id}/${newsItem.alias}`}>
+                                {newsItem.wiki_content_language[0]?.title}
+                                </Link>
+                            </h5>
+                            <p className="card-text my-1 py-2" dangerouslySetInnerHTML={{__html: newsItem.wiki_content_language[0]?.content}} 
+                                style={{  display: '-webkit-box',
+                                WebkitLineClamp: '2',
+                                WebkitBoxOrient: 'vertical',
+                                overflow: 'hidden',
+                                textOverflow: 'ellipsis',}}
+                                >
+                            </p>
+                            <Link
+                                to={`/wiki/details/${newsItem.id}/${newsItem.alias}`}
+                                className="btn-link"
+                            >
+                                Read More <i className="fa-solid fa-angle-right"></i>
+                            </Link>
+                            </div>
+                        </div>
+                        </div>
+                    ))}
+                    </>
+                )}
                 </div>
             </div>
         </section>
