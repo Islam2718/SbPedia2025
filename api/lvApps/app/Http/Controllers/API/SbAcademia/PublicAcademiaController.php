@@ -15,88 +15,7 @@ class PublicAcademiaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    // public function index(Request $request): Response
-    // {
-    //     // Get page and size from request parameters with default values
-    //     $page = $request->input('page', 1);
-    //     $size = $request->input('size', 20);
-    
-    //     // Fetch paginated news content
-    //     $response = NewsContent::paginate($size, ['*'], 'page', $page);
-    
-    //     // Check if response has data
-    //     if ($response->isEmpty()) {
-    //         return Response(['message' => 'Not Found', 'status' => 404], 404);
-    //     }
-    
-    //     // Return paginated data
-    //     return Response([
-    //         'data' => $response->items(),
-    //         'current_page' => $response->currentPage(),
-    //         'last_page' => $response->lastPage(),
-    //         'per_page' => $response->perPage(),
-    //         'total' => $response->total(),
-    //         'status' => 200
-    //     ], 200);
-    // }
-
-    // public function index(Request $request): Response
-    // {
-    //     // Get page and size from request parameters with default values
-    //     $page = $request->input('page', 1);
-    //     $size = $request->input('size', 10);
-    
-    //     // Fetch paginated news content with join
-    //     $response = NewsContent::select('news_contents.*', 'news_content_languages.*')
-    //         ->join('news_content_languages', 'news_contents.id', '=', 'news_content_languages.news_content_id')
-    //         ->paginate($size, ['*'], 'page', $page);
-    
-    //     // Check if response has data
-    //     if ($response->isEmpty()) {
-    //         return Response(['message' => 'Not Found', 'status' => 404], 404);
-    //     }
-    
-    //     // Return paginated data
-    //     return Response([
-    //         'data' => $response->items(),
-    //         'current_page' => $response->currentPage(),
-    //         'last_page' => $response->lastPage(),
-    //         'per_page' => $response->perPage(),
-    //         'total' => $response->total(),
-    //         'status' => 200
-    //     ], 200);
-    // }
-    // public function index(Request $request): Response
-    // {
-    //     // Get page and size from request parameters with default values
-    //     $page = $request->input('page', 1);
-    //     $size = $request->input('size', 30);
-    //     $lang = $request->input('lang', 1);
-
-    //     // Fetch paginated news content with related languages
-    //     $response = NewsContent::with(
-    //         ['news_content_languages' => function ($query) use ($lang) {
-    //             if ($lang) {
-    //                 $query->where('setting_language_id', $lang);
-    //             }
-    //         }]
-    //     )->paginate($size, ['*'], 'page', $page);
-    
-    //     // Check if response has data
-    //     if ($response->isEmpty()) {
-    //         return Response(['message' => 'Not Found', 'status' => 404], 404);
-    //     }
-    
-    //     // Return paginated data
-    //     return Response([
-    //         'data' => $response->items(),
-    //         'current_page' => $response->currentPage(),
-    //         'last_page' => $response->lastPage(),
-    //         'per_page' => $response->perPage(),
-    //         'total' => $response->total(),
-    //         'status' => 200
-    //     ], 200);
-    // }
+   
     public function index(Request $request): Response
     {
         // Get page, size, and lang from request parameters with default values
@@ -130,6 +49,25 @@ class PublicAcademiaController extends Controller
             'last_page' => $response->lastPage(),
             'per_page' => $response->perPage(),
             'total' => $response->total(),
+            'status' => 200
+        ], 200);
+    }
+
+    public function show($id): Response
+    {
+        // Get the news content
+        $response = AcademiaContent::with(['academia_content_language' => function ($query) use ($id) {
+            $query->where('academia_content_id', $id);
+        }])->first();
+
+        // Check if response has data
+        if (!$response) {
+            return Response(['message' => 'Not Found', 'status' => 404], 404);
+        }
+
+        // Return the news content
+        return Response([
+            'data' => $response,
             'status' => 200
         ], 200);
     }

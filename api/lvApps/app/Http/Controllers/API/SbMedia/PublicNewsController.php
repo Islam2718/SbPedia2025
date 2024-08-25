@@ -27,7 +27,7 @@ class PublicNewsController extends Controller
         $query = NewsContent::with(['news_content_languages' => function($query) use ($lang) {
             $query->where('setting_language_id', $lang);
         }])->orderBy('id', 'desc');
-        
+
         // Filter by searchKey if provided
         if ($searchKey) {
             $query->whereHas('news_content_languages', function ($query) use ($searchKey) {

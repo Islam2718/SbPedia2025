@@ -55,4 +55,23 @@ class PublicDesignLabController extends Controller
             'status' => 200
         ], 200);
     }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return JsonResponse
+     */
+    public function show($id): JsonResponse
+    {
+        $response = DesignLab::find($id);
+        if ($response) {
+            return response()->json([
+                'data' => $response,
+                'status' => 200
+            ], 200);
+        } else {
+            return response()->json(['message' => 'Not Found', 'status' => 404], 404);
+        }
+    }
 }
