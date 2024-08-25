@@ -66,15 +66,15 @@ Route::post('login', [UserauthController::class, 'userLogin']);
     // Route::resource('news-category-language', NewsCategoryLanguageController::class)->only(['index', 'store', 'update', 'show', 'destroy']);
 
     // sb academia
-    Route::resource('academia', PublicAcademiaController::class)->only(['index']);
+    Route::resource('academia', PublicAcademiaController::class)->only(['index', 'show']);
     Route::resource('academia-category', PublicAcademiaCategoryController::class)->only(['index']);
 
     // sb wiki
-    Route::resource('wiki', PublicWikiController::class)->only(['index']);
+    Route::resource('wiki', PublicWikiController::class)->only(['index', 'show']);
     Route::resource('wiki-category', PublicWikiCategoryController::class)->only(['index']);
 
     // design lab 
-    Route::resource('design-lab', PublicDesignLabController::class)->only(['index']);    
+    Route::resource('design-lab', PublicDesignLabController::class)->only(['index', 'show']);    
     // Route::resource('wiki-category', PublicWikiCategoryController::class)->only(['index']);
 
     // Route::resource('upload', UploadController::class)->only(['index']);

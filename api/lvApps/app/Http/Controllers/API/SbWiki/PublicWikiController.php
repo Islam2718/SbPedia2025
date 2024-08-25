@@ -133,4 +133,19 @@ class PublicWikiController extends Controller
             'status' => 200
         ], 200);
     }
+
+    public function show($id): Response
+    {
+        $response = WikiContent::with(['wiki_content_language' => function ($query) {
+            $query->where('setting_language_id', 1);
+        }])->find($id);
+        if (!$response) {
+            return Response(['message' => 'Not Found', 'status' => 404], 404);
+        }
+
+        return Response([
+            'data' => $response,
+            'status' => 200
+        ], 200);
+    }
 }
