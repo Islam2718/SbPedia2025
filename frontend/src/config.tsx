@@ -10,6 +10,9 @@ const config = {
     NEWS: 'news',
     WIKI_CATEGORY: 'wiki-category',
     WIKI: 'wiki',
+    DESIGN: 'design-lab',
+    ACADEMIA: 'academia',
+    ACADEMIA_CATEGORY: 'academia-category',
   };
   
   export default config;

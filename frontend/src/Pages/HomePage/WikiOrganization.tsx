@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 function WikiOrganization() {
   return (
     <div>
@@ -8,7 +8,7 @@ function WikiOrganization() {
                 <div className="section-header">
                     <h4>SB Wiki</h4>
                     <div className="see-more">
-                        <a href="/wiki/" className="" id="link-id">See All<i className="fa-solid fa-angle-right"></i> </a>                     
+                        <Link to="/wiki/" className="" id="link-id">See All<i className="fa-solid fa-angle-right"></i> </Link>                   
                     </div>
                 </div>
                 <div className="row py-4">
@@ -22,7 +22,7 @@ function WikiOrganization() {
                 <h3>Social Business Day-2024</h3> 
                 <h2><span>Save</span> The Date</h2>
                 <div className="col-md-4 col mx-auto p-3">
-                    <a href="https://socialbusinesspedia.com/events/sbd2024" target="_blank" className="btn btn-register btn-lg text-nowrap">Register Now <i className="fa-solid fa-chevron-right"></i> </a>
+                    <Link to="https://socialbusinesspedia.com/events/sbd2024" target="_blank" className="btn btn-register btn-lg text-nowrap">Register Now <i className="fa-solid fa-chevron-right"></i> </Link>
                 </div>  
             </div>              
         </div>
@@ -32,12 +32,12 @@ function WikiOrganization() {
                 <div className="section-header">
                     <h4>Organizations</h4>
                     <div className="see-more">
-                        <a href="/organization/" className="" id="link-id">See All <i className="fa-solid fa-angle-right"></i> </a>                     
+                        <Link to="/organization/" className="" id="link-id">See All <i className="fa-solid fa-angle-right"></i> </Link>                     
                     </div>
                 </div>
                 <div className="row my-4">
                 <div className="col-md-2 my-2 text-center">
-                        <a href="">
+                        <Link to="">
                         <div className="sb-box-secondary sb-shadow">
                             <div className="row p-2">
                                 <div className="col-12">
@@ -47,10 +47,10 @@ function WikiOrganization() {
                                 </div>
                             </div>
                         </div>
-                        </a>
+                        </Link>
                     </div>                
                     <div className="col-md-2 my-2 text-center">
-                        <a href="">
+                        <Link to="">
                         <div className="sb-box-secondary sb-shadow">
                             <div className="row p-2">
                                 <div className="col-12">
@@ -60,10 +60,10 @@ function WikiOrganization() {
                                 </div>
                             </div>
                         </div>
-                        </a>
+                        </Link>
                     </div>
                     <div className="col-md-2 my-2 text-center">
-                        <a href="">
+                        <Link to="">
                         <div className="sb-box-secondary sb-shadow">
                             <div className="row p-2">
                                 <div className="col-12">
@@ -74,10 +74,10 @@ function WikiOrganization() {
                                 </div>
                             </div>
                         </div>
-                        </a>
+                        </Link>
                     </div>
                     <div className="col-md-2 my-2 text-center">
-                        <a href="">
+                        <Link to="">
                         <div className="sb-box-secondary sb-shadow">
                             <div className="row p-2">
                                 <div className="col-12">
@@ -87,10 +87,10 @@ function WikiOrganization() {
                                 </div>
                             </div>
                         </div>
-                        </a>
+                        </Link>
                     </div>
                     <div className="col-md-2 my-2 text-center">
-                        <a href="">
+                        <Link to="">
                         <div className="sb-box-secondary sb-shadow">
                             <div className="row p-2">
                                 <div className="col-12">
@@ -101,10 +101,10 @@ function WikiOrganization() {
                                 </div>
                             </div>
                         </div>
-                        </a>
+                        </Link>
                     </div>                
                     <div className="col-md-2 my-2 text-center">
-                        <a href="">
+                        <Link to="">
                         <div className="sb-box-secondary sb-shadow">
                             <div className="row p-2">
                                 <div className="col-12">
@@ -114,7 +114,7 @@ function WikiOrganization() {
                                 </div>
                             </div>
                         </div>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>       

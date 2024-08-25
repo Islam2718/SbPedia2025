@@ -5,7 +5,7 @@ function NewsSidebar() {
     <div>
         <div className="container">
             <div className="section-header mt-3">
-                <h4>Upcoming Events</h4>
+                <h4>Most Popular</h4>
             </div>
             <div className="row">
                 <div className="container">                 

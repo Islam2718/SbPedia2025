@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Event() {
   return (
@@ -9,7 +10,7 @@ function Event() {
                 <div className="row">
                     <div className="col-md-7 col-lg-7 col-sm-12">
                         <div className="my-3 pb-4"><span>11<sup>th</sup> Social</span> Business <br/>Academia Conference</div>
-                        <a href="#0" className="py-2 mb-5 px-5 btn-default shadow btn text-nowrap">Register Now <i className="fa-solid fa-chevron-right"></i></a>
+                        <Link to="#0" className="py-2 mb-5 px-5 btn-default shadow btn text-nowrap">Register Now <i className="fa-solid fa-chevron-right"></i></Link>
                     </div>
                     <div className="col-5 img-block">
                         <img src="https://gdhsystem.com/ThemePublic/img/adsimg.png" alt="n/s" className="img-fluid" />
@@ -23,7 +24,7 @@ function Event() {
                 <div className="section-header">
                     <h4>Events</h4>
                     <div className="see-more">
-                        <a href="/events" className="" id="link-id">See All <i className="fa-solid fa-angle-right"></i></a>                    
+                        <Link to="/events" className="" id="link-id">See All <i className="fa-solid fa-angle-right"></i></Link>                    
                     </div>
                 </div>
                 <div className="row">
@@ -108,7 +109,7 @@ function Event() {
                                                 </div>
                                                 <div className="row mt-3">
                                                     <div className="col pt-2">
-                                                        <a href="" className="btn-link"> More <i className="fa-solid fa-chevron-right"></i> </a>
+                                                        <Link to="" className="btn-link"> More <i className="fa-solid fa-chevron-right"></i> </Link>
                                                     </div>
                                                 </div>                                                
                                             </div>
@@ -136,7 +137,7 @@ function Event() {
                                                 </div>
                                                 <div className="row mt-3">
                                                     <div className="col pt-2">
-                                                        <a href="" className="btn-link"> More <i className="fa-solid fa-chevron-right"></i></a>
+                                                        <Link to="" className="btn-link"> More <i className="fa-solid fa-chevron-right"></i></Link>
                                                     </div>
                                                 </div>                                                
                                             </div>
@@ -157,7 +158,7 @@ function Event() {
             <h3>Social Business Day-2024</h3> 
             <h2><span>Save</span> The Date</h2>
             <div className="col-md-4 col mx-auto p-3">
-                <a href="https://socialbusinesspedia.com/events/sbd2024" target="_blank" className="btn btn-register btn-lg text-nowrap">Register Now <i className="fa-solid fa-chevron-right"></i></a>
+                <Link to="https://socialbusinesspedia.com/events/sbd2024" target="_blank" className="btn btn-register btn-lg text-nowrap">Register Now <i className="fa-solid fa-chevron-right"></i></Link>
             </div>  
         </div>              
     </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-function WikiSidebar() {
+function AcademiaSidebar() {
   return (
     <div>
         <div className="container">
@@ -182,4 +182,4 @@ function WikiSidebar() {
   )
 }
 
-export default WikiSidebar
+export default AcademiaSidebar
