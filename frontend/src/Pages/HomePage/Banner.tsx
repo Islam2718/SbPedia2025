@@ -66,7 +66,7 @@ function Banner() {
                                   }}
                             >
                             <SwiperSlide>
-                                <div className="swiper-slide swiper-slide-item rounded-2 my-3 py-2 sb-shadow d-flex align-items-center">
+                                <div className="swiper-slide swiper-slide-item rounded-2 my-3 py-2 sb-shadow d-flex align-items-center" style={{maxWidth: '100%'}}>
                                     <div className="icon-area ps-2">
                                         <Link to="/news"><img src="./images/slider_news.png" alt="n/a" className="img-fluid light-theme-logo" /></Link>
                                     </div>
@@ -76,7 +76,7 @@ function Banner() {
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide>
-                            <div className="swiper-slide swiper-slide-item rounded-2 my-3 py-2 sb-shadow d-flex align-items-center">
+                            <div className="swiper-slide swiper-slide-item rounded-2 my-3 py-2 sb-shadow d-flex align-items-center" style={{maxWidth: '100%'}}>
                                     <div className="icon-area ps-2">
                                         <Link to="/events"><img src="./images/sb-event-slide.png" alt="n/s" className="img-fluid light-theme-logo" /></Link>
                                     </div>
@@ -86,7 +86,7 @@ function Banner() {
                                 </div>    
                             </SwiperSlide>
                             <SwiperSlide>
-                                <div className="swiper-slide swiper-slide-item rounded-2 my-3 py-2 sb-shadow d-flex align-items-center">                            
+                                <div className="swiper-slide swiper-slide-item rounded-2 my-3 py-2 sb-shadow d-flex align-items-center" style={{maxWidth: '100%'}}>                            
                                     <div className="icon-area ps-2">
                                         <Link to="/sbworld"><img src="./images/slider_world.png" alt="n/s" className="img-fluid light-theme-logo" /></Link>
                                     </div>
@@ -96,7 +96,7 @@ function Banner() {
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide>
-                                <div className="swiper-slide swiper-slide-item rounded-2 my-3 py-2 sb-shadow d-flex align-items-center">
+                                <div className="swiper-slide swiper-slide-item rounded-2 my-3 py-2 sb-shadow d-flex align-items-center" style={{maxWidth: '100%'}}>
                                     <div className="icon-area ps-2">
                                         <Link to="/wiki"><img src="./images/slider_wiki.png" alt="n/s" className="img-fluid light-theme-logo" /></Link>
                                     </div>
@@ -106,7 +106,7 @@ function Banner() {
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide>
-                                <div className="swiper-slide swiper-slide-item rounded-2 my-3 py-2 sb-shadow d-flex align-items-center">
+                                <div className="swiper-slide swiper-slide-item rounded-2 my-3 py-2 sb-shadow d-flex align-items-center" style={{maxWidth: '100%'}}>
                                     <div className="icon-area ps-2">
                                         <Link to="/sb-academia"><img src="./images/slider_wiki.png" alt="n/s" className="img-fluid light-theme-logo" /></Link>
                                     </div>
@@ -116,7 +116,7 @@ function Banner() {
                                 </div>
                             </SwiperSlide>
                             <SwiperSlide>
-                                <div className="swiper-slide swiper-slide-item rounded-2 my-3 py-2 sb-shadow d-flex align-items-center">
+                                <div className="swiper-slide swiper-slide-item rounded-2 my-3 py-2 sb-shadow d-flex align-items-center" style={{maxWidth: '100%'}}>
                                     <div className="icon-area ps-2">
                                         <Link to="/designlab"><img src="./images/slider_design.png" alt="n/s" className="img-fluid light-theme-logo" /></Link>
                                     </div>

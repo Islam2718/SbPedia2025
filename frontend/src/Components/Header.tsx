@@ -51,16 +51,16 @@ function Header() {
                                 </a>
                                 <ul className="dropdown-menu">
                                     <li>
-                                        <a href="/news" className="dropdown-item"><img src="/ThemePublic/images/event.png" alt="n/a" className="img-fluid" /> Events</a>                                 
+                                        <a href="/news" className="dropdown-item"><img src="./images/event.png" alt="n/a" className="img-fluid" /> Events</a>                                 
                                     </li>
                                     <li>
-                                        <a href="/news" className="dropdown-item"><img src="/ThemePublic/images/event.png" alt="n/a" className="img-fluid" /> Organization Profile</a>                                 
+                                        <a href="/news" className="dropdown-item"><img src="./images/event.png" alt="n/a" className="img-fluid" /> Organization Profile</a>                                 
                                     </li>
                                     <li>
-                                        <a href="/news" className="dropdown-item"><img src="/ThemePublic/images/news.png" alt="n/a" className="img-fluid" /> News</a>                                 
+                                        <a href="/news" className="dropdown-item"><img src="./images/news.png" alt="n/a" className="img-fluid" /> News</a>                                 
                                     </li>
                                     <li>
-                                        <a href="/news" className="dropdown-item"><img src="/ThemePublic/images/event.png" alt="n/a" className="img-fluid" /> Ideas</a>                                 
+                                        <a href="/news" className="dropdown-item"><img src="./images/event.png" alt="n/a" className="img-fluid" /> Ideas</a>                                 
                                     </li>
                                 </ul>
                             </div>
@@ -73,7 +73,7 @@ function Header() {
                                 </ul>
                             </div>
                             <div className="search">
-                                {/* <a href="#0" onclick="toggleSearch(); return false;"><img src="/ThemePublic/images/search.png" alt="n/a" className="img-fluid search-icon theme-light" /></a>                        <a href="#0" onclick="toggleSearch(); return false;"><img src="/ThemePublic/images/search_dark.png" alt="n/a" className="img-fluid search-icon theme-dark"></a>                        <div className="input-group  search-form"> */}
+                                {/* <a href="#0" onclick="toggleSearch(); return false;"><img src="./images/search.png" alt="n/a" className="img-fluid search-icon theme-light" /></a>                        <a href="#0" onclick="toggleSearch(); return false;"><img src="./images/search_dark.png" alt="n/a" className="img-fluid search-icon theme-dark"></a>                        <div className="input-group  search-form"> */}
                                 <button style={{background: 'transparent'}} onClick={toggleSearchClass} ><img src="./images/search.png" alt="n/a" className="img-fluid search-icon theme-light" /></button>
                                 <button style={{background: 'transparent'}} onClick={toggleSearchClass}><img src="./images/search_dark.png" alt="n/a" className="img-fluid search-icon theme-dark" />
                                 </button>                        
@@ -85,7 +85,7 @@ function Header() {
                                 </div>
                             </div>
                             <div className="theme-light-dark  position-inherit d-flex align-items-center">
-                                {/* <a href="#0" onclick="toggleTheme(); return false;"><img src="/ThemePublic/images/sun.png" alt="n/a" className="img-fluid sun-icon theme-light" /></a>                        <a href="#0" onclick="toggleTheme(); return false;"><img src="/ThemePublic/images/sun_dark.png" alt="n/a" className="img-fluid sun-icon theme-dark"></a>                    </div> */}
+                                {/* <a href="#0" onclick="toggleTheme(); return false;"><img src="./images/sun.png" alt="n/a" className="img-fluid sun-icon theme-light" /></a>                        <a href="#0" onclick="toggleTheme(); return false;"><img src="./images/sun_dark.png" alt="n/a" className="img-fluid sun-icon theme-dark"></a>                    </div> */}
                                 <button onClick={toggleDarkMode} style={{background: 'transparent'}}><img src="./images/sun.png" alt="n/a" className="img-fluid sun-icon theme-light" /></button>                        
                                 <button onClick={toggleDarkMode} style={{background: 'transparent'}}><img src="./images/sun_dark.png" alt="n/a" className="img-fluid sun-icon theme-dark" /></button>                    
                                 </div>
@@ -109,7 +109,7 @@ function Header() {
                     <div className="row">
                         <div className="col">
                             <div className="left-side-menu">
-                                {/* <a href="#0" onclick="toggleSidebar(); return false;"><img src="/ThemePublic/images/menubar.png" alt="n/a" className="img-fluid" /></a>                    </div> */}
+                                {/* <a href="#0" onclick="toggleSidebar(); return false;"><img src="./images/menubar.png" alt="n/a" className="img-fluid" /></a>                    </div> */}
                                 <a href="#0" onClick={toggleActiveClass} ><img src="./images/menubar.png" alt="n/a" className="img-fluid" /></a> </div>
                         </div>
                         <div className="col">
@@ -128,7 +128,7 @@ function Header() {
                                         <li className="px-2 text-center">
                                             <a href="/rbac/security/login">Login</a>                                     
                                         </li>
-                                        {/* <img src="/ThemePublic/images/login.png" alt="n/a" className="img-fluid theme-light px-2 text-center">  */}
+                                        {/* <img src="./images/login.png" alt="n/a" className="img-fluid theme-light px-2 text-center">  */}
                                         <li className="px-2 text-center">
                                             <a href="/rbac/security/registration">Registration</a>                                     
                                         </li>
@@ -177,14 +177,14 @@ function Header() {
                                 <a href="/sbworld"><p className="pt-4">Sb World</p></a>
                                 <ul className="main-menu col">
                                     <li>
-                                        <a href="/sbworld"><img src="/ThemePublic/images/home.png" alt="n/a" className="img-fluid" />Country-Wise SB</a>                           
+                                        <a href="/sbworld"><img src="./images/home.png" alt="n/a" className="img-fluid" />Country-Wise SB</a>                           
                                     </li>
                                     <li>
-                                        <a href="/sbworld"><img src="/ThemePublic/images/world.png" alt="n/a" className="img-fluid" />Sector-Wise SB</a>                                 
+                                        <a href="/sbworld"><img src="./images/world.png" alt="n/a" className="img-fluid" />Sector-Wise SB</a>                                 
                                     </li>
                                     <li>
 
-                                        <a href="/sbworld"><img src="/ThemePublic/images/academi.png" alt="n/a" className="img-fluid" />Category Wise SB</a>                             
+                                        <a href="/sbworld"><img src="./images/academi.png" alt="n/a" className="img-fluid" />Category Wise SB</a>                             
                                     </li>
                                 </ul>
                                 
@@ -192,19 +192,19 @@ function Header() {
                                 <a href="/events"><p className="pt-4">Sb Event</p></a>
                                 <ul className="main-menu col">
                                     <li>
-                                        <a href="/events"><img src="/ThemePublic/images/update.png" alt="n/a" className="img-fluid" />Upcoming Events</a>                                  
+                                        <a href="/events"><img src="./images/update.png" alt="n/a" className="img-fluid" />Upcoming Events</a>                                  
                                     </li>
                                     <li>
-                                        <a href="/events"><img src="/ThemePublic/images/network.png" alt="n/a" className="img-fluid" />Recent Events</a>                                  
+                                        <a href="/events"><img src="./images/network.png" alt="n/a" className="img-fluid" />Recent Events</a>                                  
                                     </li>
                                     <li>                                
-                                        <a href="/events"><img src="/ThemePublic/images/book.png" alt="n/a" className="img-fluid" />Social Business Day</a>                                  
+                                        <a href="/events"><img src="./images/book.png" alt="n/a" className="img-fluid" />Social Business Day</a>                                  
                                     </li>
                                     <li>
-                                        <a href="/events"><img src="/ThemePublic/images/help.png" alt="n/a" className="img-fluid" />GSBS</a>                                  
+                                        <a href="/events"><img src="./images/help.png" alt="n/a" className="img-fluid" />GSBS</a>                                  
                                     </li>
                                     <li>
-                                        <a href="/events"><img src="/ThemePublic/images/help.png" alt="n/a" className="img-fluid" />Design Labs</a>                                  
+                                        <a href="/events"><img src="./images/help.png" alt="n/a" className="img-fluid" />Design Labs</a>                                  
                                     </li>
                                 </ul>
 
@@ -216,31 +216,31 @@ function Header() {
                                 <a href="/sb-academia"><p className="pt-4">Academia</p></a>
                                 <ul className="main-menu col">
                                     <li>
-                                        <a href="/sb-academia"><img src="/ThemePublic/images/design.png" alt="n/a" className="img-fluid" />Academia Resources</a>                                 
+                                        <a href="/sb-academia"><img src="./images/design.png" alt="n/a" className="img-fluid" />Academia Resources</a>                                 
                                     </li>
                                     <li>
-                                        <a href="/sb-academia"><img src="/ThemePublic/images/news.png" alt="n/a" className="img-fluid" />SB Academia Conference</a>                               
+                                        <a href="/sb-academia"><img src="./images/news.png" alt="n/a" className="img-fluid" />SB Academia Conference</a>                               
                                     </li>
                                     <li>                                
-                                        <a href="/sb-academia"><img src="/ThemePublic/images/wiki.png" alt="n/a" className="img-fluid" />Yunus SB Centre</a>                                 
+                                        <a href="/sb-academia"><img src="./images/wiki.png" alt="n/a" className="img-fluid" />Yunus SB Centre</a>                                 
                                     </li>
                                     <li>                                
-                                        <a href="/sb-academia"><img src="/ThemePublic/images/wiki.png" alt="n/a" className="img-fluid" />Books</a>                                 
+                                        <a href="/sb-academia"><img src="./images/wiki.png" alt="n/a" className="img-fluid" />Books</a>                                 
                                     </li>
                                     <li>                                
-                                        <a href="/sb-academia"><img src="/ThemePublic/images/wiki.png" alt="n/a" className="img-fluid" />Publications</a>                                 
+                                        <a href="/sb-academia"><img src="./images/wiki.png" alt="n/a" className="img-fluid" />Publications</a>                                 
                                     </li>
                                     <li>                                
-                                        <a href="/sb-academia"><img src="/ThemePublic/images/wiki.png" alt="n/a" className="img-fluid" />Tutorials</a>                                 
+                                        <a href="/sb-academia"><img src="./images/wiki.png" alt="n/a" className="img-fluid" />Tutorials</a>                                 
                                     </li>
                                     <li>                                
-                                        <a href="/sb-academia"><img src="/ThemePublic/images/wiki.png" alt="n/a" className="img-fluid" />Academic Programs</a>                                 
+                                        <a href="/sb-academia"><img src="./images/wiki.png" alt="n/a" className="img-fluid" />Academic Programs</a>                                 
                                     </li>
                                     <li>
-                                        <a href="/sb-academia"><img src="/ThemePublic/images/wiki.png" alt="n/a" className="img-fluid" />Activities</a>                                 
+                                        <a href="/sb-academia"><img src="./images/wiki.png" alt="n/a" className="img-fluid" />Activities</a>                                 
                                     </li>
                                     <li>
-                                        <a href="/sb-academia"><img src="/ThemePublic/images/wiki.png" alt="n/a" className="img-fluid" />Reports</a>                                 
+                                        <a href="/sb-academia"><img src="./images/wiki.png" alt="n/a" className="img-fluid" />Reports</a>                                 
                                     </li>
                                 </ul>
                             </div>
@@ -252,22 +252,22 @@ function Header() {
                                 <a href="/news"><p className="pt-4">Sb Media</p></a>
                                 <ul className="main-menu col">
                                     <li>
-                                        <a href="/news"><img src="/ThemePublic/images/update.png" alt="n/a" className="img-fluid" />All News</a>                                  
+                                        <a href="/news"><img src="./images/update.png" alt="n/a" className="img-fluid" />All News</a>                                  
                                     </li>
                                     <li>
-                                        <a href="/news"><img src="/ThemePublic/images/network.png" alt="n/a" className="img-fluid" />Social Business</a>                                  
+                                        <a href="/news"><img src="./images/network.png" alt="n/a" className="img-fluid" />Social Business</a>                                  
                                     </li>
                                     <li>                                
-                                        <a href="/news"><img src="/ThemePublic/images/book.png" alt="n/a" className="img-fluid" />Press Release</a>                                  
+                                        <a href="/news"><img src="./images/book.png" alt="n/a" className="img-fluid" />Press Release</a>                                  
                                     </li>
                                     <li>
-                                        <a href="/news"><img src="/ThemePublic/images/help.png" alt="n/a" className="img-fluid" />YSBC News Feeds</a>                                  
+                                        <a href="/news"><img src="./images/help.png" alt="n/a" className="img-fluid" />YSBC News Feeds</a>                                  
                                     </li>
                                     <li>
-                                        <a href="/news"><img src="/ThemePublic/images/help.png" alt="n/a" className="img-fluid" />Print Media</a>                                  
+                                        <a href="/news"><img src="./images/help.png" alt="n/a" className="img-fluid" />Print Media</a>                                  
                                     </li>
                                     <li>
-                                        <a href="/news"><img src="/ThemePublic/images/help.png" alt="n/a" className="img-fluid" />Online Media</a>                                  
+                                        <a href="/news"><img src="./images/help.png" alt="n/a" className="img-fluid" />Online Media</a>                                  
                                     </li>
                                 </ul>
 
@@ -275,13 +275,13 @@ function Header() {
                                 <a href="/videos"><p className="pt-4">Sb Videos</p></a>
                                 <ul className="main-menu col">
                                     <li>
-                                        <a href="/gallery/videos"><img src="/ThemePublic/images/network.png" alt="n/a" className="img-fluid" />Recent Videos</a>                            </li>
+                                        <a href="/gallery/videos"><img src="./images/network.png" alt="n/a" className="img-fluid" />Recent Videos</a>                            </li>
                                     <li>
-                                        <a href="/gallery/videos"><img src="/ThemePublic/images/book.png" alt="n/a" className="img-fluid" />Top Viewed</a>                            </li>
+                                        <a href="/gallery/videos"><img src="./images/book.png" alt="n/a" className="img-fluid" />Top Viewed</a>                            </li>
                                     <li>
-                                        <a href="/gallery/videos"><img src="/ThemePublic/images/help.png" alt="n/a" className="img-fluid" />Event Videos</a>                            </li>
+                                        <a href="/gallery/videos"><img src="./images/help.png" alt="n/a" className="img-fluid" />Event Videos</a>                            </li>
                                     <li>
-                                        <a href="/gallery/videos"><img src="/ThemePublic/images/help.png" alt="n/a" className="img-fluid" />Photos</a>                            </li>
+                                        <a href="/gallery/videos"><img src="./images/help.png" alt="n/a" className="img-fluid" />Photos</a>                            </li>
                                 </ul>
                             </div>
                             {/* <!--menu items end --> 
@@ -292,18 +292,18 @@ function Header() {
                                 <a href="/designlab"><p className="pt-4">Design Lab</p></a>
                                 <ul className="main-menu col">
                                     <li>
-                                        <a href="/designlab"><img src="/ThemePublic/images/update.png" alt="n/a" className="img-fluid" />About Design Lab</a>                            </li>
+                                        <a href="/designlab"><img src="./images/update.png" alt="n/a" className="img-fluid" />About Design Lab</a>                            </li>
                                     <li>
-                                        <a href="/designlab"><img src="/ThemePublic/images/network.png" alt="n/a" className="img-fluid" />SB Design Lab</a>                                  
+                                        <a href="/designlab"><img src="./images/network.png" alt="n/a" className="img-fluid" />SB Design Lab</a>                                  
                                     </li>
                                     <li>
-                                        <a href="/designlab"><img src="/ThemePublic/images/book.png" alt="n/a" className="img-fluid" />Archives</a>                                  
+                                        <a href="/designlab"><img src="./images/book.png" alt="n/a" className="img-fluid" />Archives</a>                                  
                                     </li>
                                     <li>
-                                        <a href="/designlab"><img src="/ThemePublic/images/help.png" alt="n/a" className="img-fluid" />All Projets</a>                                  
+                                        <a href="/designlab"><img src="./images/help.png" alt="n/a" className="img-fluid" />All Projets</a>                                  
                                     </li>
                                     <li>
-                                        <a href="/designlab"><img src="/ThemePublic/images/help.png" alt="n/a" className="img-fluid" />FAQ</a>                                  
+                                        <a href="/designlab"><img src="./images/help.png" alt="n/a" className="img-fluid" />FAQ</a>                                  
                                     </li>
                                 </ul>
 
@@ -311,10 +311,10 @@ function Header() {
                                 <a href="/wiki"><p className="pt-4">SB Wiki</p></a>
                                 <ul className="main-menu col">
                                     <li>
-                                        <a href="/wiki"><img src="/ThemePublic/images/network.png" alt="n/a" className="img-fluid" />Resources</a>                                  
+                                        <a href="/wiki"><img src="./images/network.png" alt="n/a" className="img-fluid" />Resources</a>                                  
                                     </li>
                                     <li>                                
-                                        <a href="/wiki"><img src="/ThemePublic/images/book.png" alt="n/a" className="img-fluid" />Yunus Library</a>                                  
+                                        <a href="/wiki"><img src="./images/book.png" alt="n/a" className="img-fluid" />Yunus Library</a>                                  
                                     </li>
                                 </ul>
                             </div>

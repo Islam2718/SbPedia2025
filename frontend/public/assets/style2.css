@@ -761,6 +761,9 @@ body.dark-theme .news-trending-area .news-trending .section-title p {
 .news-trending-area .news-trending .news-slider .newsSwiper .swiper-slide .news-image {
   position: relative;
 }
+.news-trending-area .news-trending .news-slider .newsSwiper .swiper-slide .news-image img {
+  height: 260px;
+}
 .news-trending-area .news-trending .news-slider .newsSwiper .swiper-slide .news-image span {
   position: absolute;
   bottom: 20px;

@@ -41,7 +41,8 @@ function WikiOrganization() {
                         <div className="sb-box-secondary sb-shadow">
                             <div className="row p-2">
                                 <div className="col-12">
-                                    <img src="/../uploads/gkl.png" className="rounded img-fluid img" alt="" />                            </div>
+                                    <img src="./images/gkl.png" className="rounded img-fluid img" alt="n/a" />
+                                </div>
                                 <div className="col-12 px-3 mt-2">
                                     <h5>G. Knitwear Ltd.</h5>
                                 </div>
@@ -54,7 +55,8 @@ function WikiOrganization() {
                         <div className="sb-box-secondary sb-shadow">
                             <div className="row p-2">
                                 <div className="col-12">
-                                    <img src="/../uploads/yc.png" className="rounded img-fluid img" alt="" />                            </div>
+                                    <img src="./images/yc.png" className="rounded img-fluid img" alt="" />
+                                </div>
                                 <div className="col-12 px-3 mt-2">
                                     <h5>Yunus Centre</h5>
                                 </div>
@@ -67,7 +69,7 @@ function WikiOrganization() {
                         <div className="sb-box-secondary sb-shadow">
                             <div className="row p-2">
                                 <div className="col-12">
-                                    <img src="/../uploads/gchina.png" className="rounded img-fluid img" alt="" />                                
+                                    <img src="./images/gchina.png" className="rounded img-fluid img" alt="" />                                
                                 </div>
                                 <div className="col-12 px-3 mt-2">
                                     <h5>Grameen China</h5>
@@ -81,7 +83,8 @@ function WikiOrganization() {
                         <div className="sb-box-secondary sb-shadow">
                             <div className="row p-2">
                                 <div className="col-12">
-                                <img src="/../uploads/ysh.png" className="rounded img-fluid img" alt="" />                            </div>
+                                    <img src="./images/ysh.png" className="rounded img-fluid img" alt="" />
+                                </div>
                                 <div className="col-12 px-3 mt-2">
                                     <h5>Yunus Sports Hub</h5>
                                 </div>
@@ -94,7 +97,7 @@ function WikiOrganization() {
                         <div className="sb-box-secondary sb-shadow">
                             <div className="row p-2">
                                 <div className="col-12">
-                                    <img src="/../uploads/yc.png" className="rounded img-fluid img" alt="" />                                
+                                    <img src="./images/yc.png" className="rounded img-fluid img" alt="" />                                
                                 </div>
                                 <div className="col-12 px-3 mt-2">
                                     <h5>YT Foundation</h5>
@@ -108,7 +111,8 @@ function WikiOrganization() {
                         <div className="sb-box-secondary sb-shadow">
                             <div className="row p-2">
                                 <div className="col-12">
-                                    <img src="/../uploads/gkl.png" className="rounded img-fluid img" alt="" />                            </div>
+                                    <img src="./images/gkl.png" className="rounded img-fluid img" alt="" />
+                                </div>
                                 <div className="col-12 px-3 mt-2">
                                     <h5>US Malaysia</h5>
                                 </div>
