@@ -13,7 +13,7 @@ function Event() {
                         <Link to="#0" className="py-2 mb-5 px-5 btn-default shadow btn text-nowrap">Register Now <i className="fa-solid fa-chevron-right"></i></Link>
                     </div>
                     <div className="col-5 img-block">
-                        <img src="https://gdhsystem.com/ThemePublic/img/adsimg.png" alt="n/s" className="img-fluid" />
+                        <img src="./images/adsimg.png" alt="n/s" className="img-fluid" />
                     </div>
                 </div>
             </div>
@@ -32,7 +32,7 @@ function Event() {
                         <div className="my-3 p-4">
                             <div className="row p-3 pt-4 bg-box sb-shadow rounded">
                                 <div className="col-md-12">
-                                    <img src="https://socialbusinesspedia.com/uploads/event/85/413x291/ua_257407599592735255557467287931.png" alt="n/a" className="img-fluid news-banner1" />
+                                    <img src="./images/hot-banner.png" alt="n/a" className="img-fluid news-banner1" />
                                 </div>
                                 <div className="col-md-12">
                                     <div className="my-3">
@@ -91,7 +91,7 @@ function Event() {
                         <div className="my-3 p-4">
                                 <div className="row mb-4 p-3 pt-4 bg-box sb-shadow rounded">
                                 <div className="col-md-12">
-                                    <img src="https://socialbusinesspedia.com/uploads/event/85/413x291/ua_903861011299209934853080593123.jpg" alt="n/a" className="img-fluid news-banner1" />
+                                    <img src="./images/hot-banner.png" alt="n/a" className="img-fluid news-banner1" />
                                 </div>
                                 <div className="col-md-12">
                                     <div className="my-3">
@@ -119,7 +119,7 @@ function Event() {
                             </div>
                                                     <div className="row mb-4 p-3 pt-4 bg-box sb-shadow rounded">
                                 <div className="col-md-12">
-                                    <img src="https://socialbusinesspedia.com/uploads/event/85/413x291/ua_880177916919151871731417088683.png" alt="n/a" className="img-fluid news-banner1" />
+                                    <img src="./images/hot-banner.png" alt="n/a" className="img-fluid news-banner1" />
                                 </div>
                                 <div className="col-md-12">
                                     <div className="my-3">
@@ -153,7 +153,7 @@ function Event() {
         </section>
         {/* call to action section */}
         {/* <div className="container-fluid py-5 c2a item-align-center text-center" style="background-image: url('ThemePublic/images/event-ads-bg.png'); background-repeat: no-repeat; background-size: 100% 100%;"> */}
-        <div className="container-fluid py-5 c2a item-align-center text-center">
+        <div className="container-fluid py-5 c2a item-align-center text-center" style={{backgroundImage: "url(./images/event-ads-bg.png)", backgroundRepeat: "no-repeat", backgroundSize: "100% 100%"}}>
         <div className="col-lg-10 col-mg-10 col-sm-12 mx-auto">
             <h3>Social Business Day-2024</h3> 
             <h2><span>Save</span> The Date</h2>

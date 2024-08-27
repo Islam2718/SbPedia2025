@@ -1,8 +1,82 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+import config from '../../config';
+export interface NewsItem {
+    id: number;
+    person_id: string;
+    alias: string;
+    is_top_news: string;
+    is_featured: string;
+    is_organization_news: string;
+    organization_id: string;
+    is_user_news: string | null;
+    featured_image: string;
+    tags: string | null;
+    link_type: string;
+    custom_link: string | null;
+    is_target_blank: string | null;
+    order: string;
+    status: string;
+    approve_status: string;
+    publish_date: string;
+    country_id: string;
+    country_name: string | null;
+    city_name: string | null;
+    organization_name: string | null;
+    activity_id: string;
+    live_edited_by: string | null;
+    is_file: string;
+    file_type: string | null;
+    file_name: string | null;
+    created_at: string;
+    updated_at: string;
+    news_content_languages: NewsContentLanguage[];
+  }
+  // Interface for the news content languages
+export interface NewsContentLanguage {
+    id: number;
+    news_content_id: string;
+    setting_language_id: string;
+    title: string;
+    sub_title: string;
+    name: string;
+    content: string;
+    featured_image: string | null;
+    is_default: string;
+    created_by: string;
+    updated_by: string;
+    status: string;
+    activity_id: string;
+    created_at: string;
+    updated_at: string;
+  }
 function News() {
+    const [loading, setLoading] = useState<boolean>(true);
+    const [error, setError] = useState<string | null>(null);
+    const [newsData, setNewsData] = useState<NewsItem[] | null>(null);
+
+    useEffect(() => {
+      const fetchNews = async () => {
+        try {
+          const response = await axios.get(config.API_URL_LIVE + config.NEWS + '?lang=1&page=1&size=10');
+          
+          if (response.status === 200) {
+            setNewsData(response.data.data); // Set the news data from the response
+          } else {
+            setError(`Error: ${response.status}`);
+          }
+        } catch (err) {
+          setError('Failed to fetch news.');
+        } finally {
+          setLoading(false);
+        }
+      };
+  
+      fetchNews();
+    }, []);
   return (
     <div>
         <section className="news-area my-2 mt-5">
@@ -15,33 +89,47 @@ function News() {
             </div>            
             <div className="py-4">
                 <div className="row focus-news p-3 pt-5 rounded">
+                {newsData && newsData.length > 0 && (
+                    <>
+                    {/* First Item */}
                     <div className="col-md-6">
-                    <Link to="">
-                        <img src="https://socialbusinesspedia.com/uploads/news/845x400/ua_300844088509068813070624533273.png" alt="n/a" className="img-fluid news-banner" />                        
+                    <Link to={`/news/details/${newsData[0]?.id}/${newsData[0]?.alias}`}>
+                        <img src={`https://socialbusinesspedia.com/uploads/news/845x400/${newsData[0]?.featured_image}`} alt="n/a" className="img-fluid news-banner" />                        
                     </Link>
                     </div>
                     <div className="col-md-6">
                         <div className="news-content-area d-flex h-100 align-items-center">
                             <div>
-                                <Link to="/news/details/1427/12th-social-business-day-sponsored-by-yunus-centre-kicks-off-on-june-27th" className="news-title-link">
+                                <Link to={`/news/details/${newsData[0]?.id}/${newsData[0]?.alias}`} className="news-title-link">
                                 <span className="news-date">
-                                    <img src="ThemePublic/images/clock.png" alt="n/a" className="img-fluid" /> 6/27/22                                </span>
+                                    <img src="./images/clock.png" alt="n/a" className="img-fluid" /> {newsData[0]?.publish_date}                               </span>
                                 </Link>
                                 <div className="news-title">
-                                    <Link to="/news/details/1427/12th-social-business-day-sponsored-by-yunus-centre-kicks-off-on-june-27th">
-                                        <h3>12th Social Business Day sponsored by Yunus Centre  kicks off on June 27th</h3>
+                                    <Link to={`/news/details/${newsData[0]?.id}/${newsData[0]?.alias}`}>
+                                        <h3>{newsData[0]?.news_content_languages[0]?.title}</h3>
                                     </Link>
                                 </div>
                                 <div className="news-content">
-                                    <p>Yunus Centre Press Release ( 27 june 2022 )&nbsp;&amp;...</p>                                </div>
+                                    <p className="card-text my-1 py-2" dangerouslySetInnerHTML={{__html: newsData[0]?.news_content_languages[0]?.content}}
+                                    style={{  display: '-webkit-box',
+                                        WebkitLineClamp: '2',
+                                        WebkitBoxOrient: 'vertical',
+                                        overflow: 'hidden',
+                                        textOverflow: 'ellipsis',}}
+                                    >
+                                    </p>    
+                                </div>
                                 <div className="read-more">
-                                    <Link className="btn btn-secondary" to="/news/details/1427/12th-social-business-day-sponsored-by-yunus-centre-kicks-off-on-june-27th">
+                                    <Link className="btn btn-secondary" to={`/news/details/${newsData[0]?.id}/${newsData[0]?.alias}`}>
                                         Read More  <i className="fa-solid fa-angle-right"></i>
                                     </Link>
                                 </div>
                             </div>                            
                         </div>
                     </div>
+                    </>
+                )}
+                    
                 </div>
             </div>
         </div>
@@ -84,21 +172,18 @@ function News() {
                             },
                           }}
                     >
-                        <SwiperSlide>
-                            <div className="swiper-slide rounded-2 my-3 swiper-slide-active" role="group" aria-label="1 / 9"><Link to="/news/details/1426/yunus-invited-to-rome-to-discuss-the-theme-for-expo-2030." className="news-link"><div><div className="news-image"><img src="https://socialbusinesspedia.com/uploads/news/845x400/ua_720117561433900406238098467708.jpg" alt="n/a" className="img-fluid" /><span>  Social Business</span></div><div className="new-date"> <i className="fa-regular fa-clock"></i> 6/11/22</div><div className="news-title"><p>Yunus Invited to Rome to Discuss the Theme for Expo 2030.</p></div></div></Link></div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="swiper-slide rounded-2 my-3 swiper-slide-next" role="group" aria-label="2 / 9" ><Link to="/news/details/1425/yunus-warns-about-the-disaster-path-of-present-civilization.-urges-to-build-a-new-civilization." className="news-link"><div><div className="news-image"><img src="https://socialbusinesspedia.com/uploads/news/845x400/ua_740050820538470201770617162458.jpg" alt="n/a" className="img-fluid" /><span>  Social Business</span></div><div className="new-date"><i className="fa-regular fa-clock"></i> 6/6/22</div><div className="news-title"><p>Yunus Warns About the Disaster Path of Present Civilization. Urges to Build a New Civilization.</p></div></div></Link></div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="swiper-slide rounded-2 my-3" role="group" aria-label="3 / 9" ><Link to="/news/details/1424/yunus-speaks-at-parliamentary-breakfast-in-the-german-parliament" className="news-link"><div><div className="news-image"><img src="https://socialbusinesspedia.com/uploads/news/845x400/ua_819607783770282277797056793077.jpg" alt="n/a" className="img-fluid" /><span>  Social Business</span></div><div className="new-date"> <i className="fa-regular fa-clock"></i>  6/4/22</div><div className="news-title"><p>Yunus Speaks at Parliamentary Breakfast in the German Parliament</p></div></div></Link></div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="swiper-slide rounded-2 my-3" role="group" aria-label="5 / 9" ><Link to="/news/details/1422/mahathir-mohammad-invites-professor-yunus-for-a-discussion" className="news-link"><div><div className="news-image"><img src="https://socialbusinesspedia.com/uploads/news/845x400/ua_601106589216667601937708371722.jpg" alt="n/a" className="img-fluid" /><span>  Social Business</span></div><div className="new-date"> <i className="fa-regular fa-clock"></i> 3/30/22</div><div className="news-title"><p>Mahathir Mohammad Invites Professor Yunus for a Discussion</p></div></div></Link></div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className="swiper-slide rounded-2 my-3" role="group" aria-label="5 / 9" ><Link to="/news/details/1422/mahathir-mohammad-invites-professor-yunus-for-a-discussion" className="news-link"><div><div className="news-image"><img src="https://socialbusinesspedia.com/uploads/news/845x400/ua_601106589216667601937708371722.jpg" alt="n/a" className="img-fluid" /><span>  Social Business</span></div><div className="new-date"> <i className="fa-regular fa-clock"></i> 3/30/22</div><div className="news-title"><p>Mahathir Mohammad Invites Professor Yunus for a Discussion</p></div></div></Link></div>
-                        </SwiperSlide>
+                    {newsData && newsData.length > 0 && (
+                        <>
+                        {/* Rest of the Items */}
+                        {newsData.slice(2).map((newsItem) => (
+                            <SwiperSlide key={newsItem.id}>
+                                <div className="swiper-slide rounded-2 my-3" role="group" aria-label="5 / 9" ><Link to={`/news/details/${newsItem.id}/${newsItem.news_content_languages[0]?.title}`} className="news-link"><div><div className="news-image">
+                                    <img src={`https://socialbusinesspedia.com/uploads/news/845x400/${newsItem.featured_image}`} alt="n/a" className="img-fluid" /><span> Social Business </span></div><div className="new-date"> <i className="fa-regular fa-clock"></i> {newsItem.publish_date}</div><div className="news-title"><p>{newsItem.news_content_languages[0]?.title}</p></div></div></Link>
+                                </div>
+                            </SwiperSlide>
+                        ))}
+                        </>
+                    )}
                     </Swiper>
                         <div className="swiper-button-next d-lg-flex d-none" role="button" style={{width: '40px', height: '40px', position: 'absolute', right: '10px', top: '50%', zIndex: '1', padding: '12px 15px'}} ><i className="fa-solid fa-angle-right"></i></div>
                         <div className="swiper-button-prev d-lg-flex d-none " role="button" style={{width: '40px', height: '40px', position: 'absolute', left: '10px', top: '50%', zIndex: '1', padding: '12px 15px'}}><i className="fa-solid fa-angle-left"></i></div>
