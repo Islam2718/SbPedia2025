@@ -5,7 +5,7 @@ const config = {
     API_URL: process.env.REACT_APP_API_URL,
     FILE_URL: process.env.REACT_APP_FILE_URL, 
   
-    
+    LANGUAGE : 'language',
     NEWS_CATEGORY: 'news-category',
     NEWS: 'news',
     WIKI_CATEGORY: 'wiki-category',
