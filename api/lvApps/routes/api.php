@@ -23,6 +23,8 @@ use App\Http\Controllers\API\SbWiki\PublicWikiController;
 use App\Http\Controllers\API\SbWiki\PublicWikiCategoryController;
 // designlab
 use App\Http\Controllers\API\DesignLab\PublicDesignLabController;
+// designlab
+use App\Http\Controllers\API\Organization\PublicOrganizationController;
 
 /*
 |--------------------------------------------------------------------------
