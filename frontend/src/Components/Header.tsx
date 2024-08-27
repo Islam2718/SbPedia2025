@@ -1,27 +1,51 @@
+import axios from 'axios';
+import config from '../config';
 import React from 'react'
 import { useState, useEffect } from 'react';
+
+export interface LanguageItem {
+    id: number;
+    language_name: string;
+    language_code: string;
+    status: string;
+  }
+
 function Header() {
       // State to track whether to add the "fixed" class or not
   const [isFixed, setIsFixed] = useState(false);
+  const [languageData, setLanguageData] = useState<LanguageItem[] | null>(null);
 
   useEffect(() => {
+    const fetchLanguage = async () => {
+        try {
+          const response = await axios.get(config.API_URL_LIVE + 'language');
+          
+          if (response.status === 200) {
+            setLanguageData(response.data.data);
+          }
+        } catch (err) {
+          console.log('_err', err);
+        }
+      };  
+      fetchLanguage();  
+
     // Function to handle scroll events
-    const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setIsFixed(true); // Add the class when scrolled down
-      } else {
-        setIsFixed(false); // Remove the class when scrolled to the top
-      }
-    };
+        const handleScroll = () => {
+            if (window.scrollY > 0) {
+                setIsFixed(true); // Add the class when scrolled down
+            } else {
+                setIsFixed(false); // Remove the class when scrolled to the top
+            }
+        };
 
-    // Attach the event listener to the window object
-    window.addEventListener('scroll', handleScroll);
+        // Attach the event listener to the window object
+        window.addEventListener('scroll', handleScroll);
 
-    // Cleanup the event listener on component unmount
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []); // Empty dependency array ensures this runs once after initial render
+        // Cleanup the event listener on component unmount
+        return () => {
+        window.removeEventListener('scroll', handleScroll);
+        };
+    }, []); // Empty dependency array ensures this runs once after initial render
     // Function to toggle the 'dark' class on the body tag
     const toggleDarkMode = () => {
         document.body.classList.toggle('dark-theme');
@@ -46,7 +70,7 @@ function Header() {
                         <div className="left-menu ">
                             {/* <!-- Example single danger button --> */}
                             <div className="dropdow d-flex align-items-center">
-                                <a className="drop-btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a className="drop-btn dropdown-toggle" href="#0" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Create
                                 </a>
                                 <ul className="dropdown-menu">
@@ -65,12 +89,17 @@ function Header() {
                                 </ul>
                             </div>
                             <div className="language d-flex align-items-center">
-                                <a className="drop-btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                {languageData && languageData.length > 0 && (
+                                    <a className="drop-btn dropdown-toggle" href="#0" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        {languageData[0].language_code}
+                                    </a>
+                                )}
+                                {/* <a className="drop-btn dropdown-toggle" href="#0" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     EN
                                 </a>
                                 <ul className="dropdown-menu">
-                                    <li><a className="dropdown-item" href="#">EN</a></li>
-                                </ul>
+                                    <li><a className="dropdown-item" href="#0">EN</a></li>
+                                </ul> */}
                             </div>
                             <div className="search">
                                 {/* <a href="#0" onclick="toggleSearch(); return false;"><img src="./images/search.png" alt="n/a" className="img-fluid search-icon theme-light" /></a>                        <a href="#0" onclick="toggleSearch(); return false;"><img src="./images/search_dark.png" alt="n/a" className="img-fluid search-icon theme-dark"></a>                        <div className="input-group  search-form"> */}
@@ -122,7 +151,7 @@ function Header() {
                                 <div className="right-side-menu justify-content-end d-flex">
                                     {/* <a href="#0" className="search-icon" onclick="toggleTheme()"><img src="ThemePublic/images/sun.png" alt="n/a" className="img-fluid" /></a>   */}
                                     <a href="#0" className="search-icon"><img src="./images/sun.png" alt="n/a" className="img-fluid" /></a>  
-                                    <a className="drop-btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <a className="drop-btn dropdown-toggle" href="#0" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         <img src="./images/login.png" alt="n/a" className="img-fluid m-0 p-0"/>                            </a>
                                     <ul className="dropdown-menu login-drop-menu">
                                         <li className="px-2 text-center">
