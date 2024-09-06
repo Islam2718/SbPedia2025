@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import axios from 'axios';
 import config from '../../config';
 import { useEffect, useState } from 'react';
+import { useLanguage } from '../../LanguageContext';
 interface WikiCategoryItem {
     id: number;
     parent_id: string;
@@ -31,10 +32,11 @@ function WikiBanner() {
     const [data, setData] = useState<WikiCategoryItem[] | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
+    const { languageId } = useLanguage(); // Use the current language ID from the context
     useEffect(() => {
         const fetchData = async () => {
           try {
-            const response = await axios.get(config.API_URL_LIVE + config.WIKI_CATEGORY + '?lang=1&page=1&size=20');
+            const response = await axios.get(config.API_URL_LIVE + config.WIKI_CATEGORY + `?lang=${languageId}&page=1&size=20`);
             // Check for status
             if (response.status === 200) {
               setData(response.data.data); // Set the data from the API response
@@ -49,7 +51,7 @@ function WikiBanner() {
           }
         };
         fetchData();
-      }, []);
+      }, [languageId]);
   return (
     <div>
         <section className="news-page-banner text-center">

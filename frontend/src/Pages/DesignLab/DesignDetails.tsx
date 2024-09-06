@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom'
 import DesignBanner from './DesignBanner';
 import DesignSidebar from './DesignSidebar';
-
+import { useLanguage } from '../../LanguageContext';
 interface DesignItem {
     id: number;
     person_id: string;
@@ -43,6 +43,7 @@ function DesignDetails() {
     const [error, setError] = useState<string | null>(null);
     const [data, setData] = useState<DesignItem | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
+    const { languageId } = useLanguage(); // Use the current language ID from the context
     useEffect(() => {
         const fetchNews = async () => {
           try {
@@ -61,7 +62,7 @@ function DesignDetails() {
         };
     
         fetchNews();
-      }, []);
+      }, [languageId]);
   return (
     <div>
         <DesignBanner />

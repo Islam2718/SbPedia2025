@@ -15,29 +15,33 @@ import DesignPage from './Pages/DesignLab/DesignPage';
 import DesignDetails from './Pages/DesignLab/DesignDetails';
 import Academia from './Pages/Academia/AcademiaPage';
 import AcademiaDetails from './Pages/Academia/AcademiaDetails';
+import { LanguageProvider } from './LanguageContext';
 function App() {
   return (
-    <div>
-      <Header />
-      	<Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/registration" element={<Registration />} />
-          <Route path="/news" element={<NewsPage />} />
-          <Route path="/news/details/:id/:title" element={<NewsDetails />} />
-          <Route path="/wiki" element={<WikiPage />} />
-          <Route path="/wiki/details/:id/:title" element={<WikiDetails />} />
-          <Route path="/wiki" element={<WikiPage />} />
-          <Route path="/wiki/details/:id/:title" element={<WikiDetails />} />
-          <Route path="/designlab" element={<DesignPage />} />
-          <Route path="/desginlab/details/:id/:title" element={<DesignDetails />} />
-          <Route path="/sb-academia?/:details" element={<Academia />} />
-          <Route path="/sb-academia/details/:id/:title" element={<AcademiaDetails />} />
-        </Routes>
-    <Footer />
-  </div>
+  <LanguageProvider>
+      <div>
+        <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/registration" element={<Registration />} />
+            <Route path="/news" element={<NewsPage />} />
+            <Route path="/news/details/:id/:title" element={<NewsDetails />} />
+            <Route path="/wiki" element={<WikiPage />} />
+            <Route path="/wiki/details/:id/:title" element={<WikiDetails />} />
+            <Route path="/wiki" element={<WikiPage />} />
+            <Route path="/wiki/details/:id/:title" element={<WikiDetails />} />
+            <Route path="/designlab" element={<DesignPage />} />
+            <Route path="/desginlab/details/:id/:title" element={<DesignDetails />} />
+            <Route path="/sb-academia?/:details" element={<Academia />} />
+            <Route path="/sb-academia/details/:id/:title" element={<AcademiaDetails />} />
+          </Routes>
+      <Footer />
+    </div>
+  </LanguageProvider>
+
   );
 }
 

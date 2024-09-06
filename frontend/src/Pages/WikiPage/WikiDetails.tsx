@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom'
 import WikiBanner from './WikiBanner';
 import WikiSidebar from './WikiSidebar';
-
+import { useLanguage } from '../../LanguageContext';
 interface WikiItem {
     id: number;
     person_id: string;
@@ -55,7 +55,7 @@ function NewsDetails() {
     const [error, setError] = useState<string | null>(null);
     const [data, setData] = useState<WikiItem | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
-
+    const { languageId } = useLanguage(); // Use the current language ID from the context
     useEffect(() => {
         const fetchNews = async () => {
           try {
@@ -74,7 +74,7 @@ function NewsDetails() {
         };
     
         fetchNews();
-      }, []);
+      }, [languageId]);
 
   return (
     <div>

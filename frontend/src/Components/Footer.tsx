@@ -1,6 +1,12 @@
 import React from 'react'
-
+import { useLanguage } from '../LanguageContext'
 function Footer() {
+    const { setLanguageId } = useLanguage();
+
+    const handleLanguageChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+      const selectedLanguageId = parseInt(event.target.value, 10);
+      setLanguageId(selectedLanguageId);
+    };
   return (
     <div>
         <footer className="footer mt-5">
@@ -74,7 +80,7 @@ function Footer() {
                 <div className="container-fluid">
                     <div className="mx-4 d-flex justify-content-between flex-wrap">
                         <div className="d-flex flex-wrap">
-                        <a href="/"><img src="https://gdhsystem.com/ThemePublic/images/logo.png" alt="n/a" className="img-fluid" /></a>                            <p>©2023 SbPedia</p>
+                            <a href="/"><img src="https://gdhsystem.com/ThemePublic/images/logo.png" alt="n/a" className="img-fluid" /></a>                            <p>©2023 SbPedia</p>
                             <ul className="d-flex flex-wrap">
                                 <li><a href="#0"> Idea Bank </a></li>
                                 <li><a href="#0"> SB Updated </a></li>
@@ -85,12 +91,12 @@ function Footer() {
                             </ul>
                         </div>
                         <div className="footer-language d-lg-block d-none">
-                            <select className="form-select form-select-sm" aria-label="Small select example">
+                            <select className="form-select form-select-sm" aria-label="Small select example" onChange={handleLanguageChange}>
                                 {/* <option selected="">Language</option> */}
-                                <option value="0">EN</option>
-                                <option value="1">BN</option>
-                                <option value="2">CH</option>
+                                <option value="1">EN</option>
+                                <option value="2">BN</option>
                                 <option value="3">JP</option>
+                                <option value="4">SPN</option>
                             </select>
                         </div>
                     </div> 

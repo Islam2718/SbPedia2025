@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import config from '../../config';
+import { useLanguage } from '../../LanguageContext';
 export interface NewsItem {
     id: number;
     person_id: string;
@@ -57,11 +58,11 @@ function News() {
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
     const [newsData, setNewsData] = useState<NewsItem[] | null>(null);
-
+    const { languageId } = useLanguage(); // Use the current language ID from the context
     useEffect(() => {
       const fetchNews = async () => {
         try {
-          const response = await axios.get(config.API_URL_LIVE + config.NEWS + '?lang=1&page=1&size=10');
+          const response = await axios.get(config.API_URL_LIVE + config.NEWS + `?lang=${languageId}&page=1&size=10`);
           
           if (response.status === 200) {
             setNewsData(response.data.data); // Set the news data from the response
@@ -76,7 +77,7 @@ function News() {
       };
   
       fetchNews();
-    }, []);
+    }, [languageId]);
   return (
     <div>
         <section className="news-area my-2 mt-5">

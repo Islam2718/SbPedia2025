@@ -4,6 +4,7 @@ import config from '../../config'
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
+import { useLanguage } from '../../LanguageContext';
 interface AcademiaContentLanguage {
     id: number;
     academia_content_id: string;
@@ -61,6 +62,7 @@ function AcademiaPost() {
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
     const [academiaData, setAcademiaData] = useState<AcademiaContent[] | null>(null);
+    const { languageId } = useLanguage(); // Use the current language ID from the context
     let { details } = useParams();
     if(details == 'sb-academia') {
       details = 'academia'
@@ -71,7 +73,7 @@ function AcademiaPost() {
     useEffect(() => {
       const fetchNews = async () => {
         try {
-            const response = await axios.get(config.API_URL_LIVE + (details ?? '') + '?lang=1&page=1&size=20');
+            const response = await axios.get(config.API_URL_LIVE + (details ?? '') + `?lang=${languageId}&page=1&size=20`);
           if (response.status === 200) {
             setAcademiaData(response.data.data); // Set the news data from the response
           } else {
@@ -85,7 +87,7 @@ function AcademiaPost() {
       };
   
       fetchNews();
-    }, [details]);
+    }, [details, languageId]);
   return (
     <div>
         <section className="section-top-news py-5">

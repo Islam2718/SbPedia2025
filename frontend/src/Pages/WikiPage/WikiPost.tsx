@@ -3,7 +3,7 @@ import axios from 'axios'
 import config from '../../config'
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import { useLanguage } from '../../LanguageContext';
 interface WikiApiResponse {
   data: WikiItem[];
   current_page: number;
@@ -61,11 +61,11 @@ function WikiPost() {
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
     const [wikiData, setWikiData] = useState<WikiItem[] | null>(null);
-
+    const { languageId } = useLanguage(); // Use the current language ID from the context
     useEffect(() => {
       const fetchNews = async () => {
         try {
-          const response = await axios.get(config.API_URL_LIVE + config.WIKI + '?lang=1&page=1&size=20');
+          const response = await axios.get(config.API_URL_LIVE + config.WIKI + `?lang=${languageId}&page=1&size=20`);
           
           if (response.status === 200) {
             setWikiData(response.data.data); // Set the news data from the response
@@ -80,7 +80,7 @@ function WikiPost() {
       };
   
       fetchNews();
-    }, []);
+    }, [languageId]);
   return (
     <div>
         <section className="section-top-news py-5">

@@ -2,6 +2,7 @@ import axios from 'axios';
 import config from '../config';
 import React from 'react'
 import { useState, useEffect } from 'react';
+import { useLanguage } from '../LanguageContext';
 
 export interface LanguageItem {
     id: number;
@@ -14,6 +15,7 @@ function Header() {
       // State to track whether to add the "fixed" class or not
   const [isFixed, setIsFixed] = useState(false);
   const [languageData, setLanguageData] = useState<LanguageItem[] | null>(null);
+  const { languageId } = useLanguage(); // Use the current language ID from the context
 
   useEffect(() => {
     const fetchLanguage = async () => {
@@ -61,6 +63,14 @@ function Header() {
     const toggleSearchClass = () => {
         setIsSearchActive(!isSearchActive); // Toggle the state between true and false
     };
+
+
+    const { setLanguageId } = useLanguage();
+
+    const handleLanguageChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+      const selectedLanguageId = parseInt(event.target.value, 10);
+      setLanguageId(selectedLanguageId);
+    };
   return (
     <div>
         <header className={`header ${isFixed ? 'fixed' : ''}`}>
@@ -89,11 +99,31 @@ function Header() {
                                 </ul>
                             </div>
                             <div className="language d-flex align-items-center">
-                                {languageData && languageData.length > 0 && (
-                                    <a className="drop-btn dropdown-toggle" href="#0" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        {languageData[0].language_code}
-                                    </a>
-                                )}
+                            <select className="form-select form-select-sm " aria-label="Small select example" onChange={handleLanguageChange} style={{textTransform: 'uppercase', fontSize: '1rem', border: 'none', forcedColorAdjust: 'none' }}> 
+                                <option value="1">EN</option>
+                                <option value="2">BN</option>
+                                <option value="3">JP</option>
+                                <option value="4">SPN</option>
+                            </select>
+                                    {/* <a
+                                        className="drop-btn dropdown-toggle"
+                                        href="#0"
+                                        role="button"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false"
+                                    >
+                                        EN
+                                    </a> 
+                           
+                                {languageData && languageData.length > 0 && ( 
+                                    languageData.map((language) => ( 
+                                    <ul className="dropdown-menu" >
+                                        <li><a className="dropdown-item" href="#0" key={language.id}>{language.language_code}</a></li>
+                                   </ul>
+                                   ))
+                                    
+                                )} */}
+                            
                                 {/* <a className="drop-btn dropdown-toggle" href="#0" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     EN
                                 </a>
@@ -181,6 +211,8 @@ function Header() {
                         </select>
                         <select className="form-select form-select-sm" aria-label="Small select example">
                             {/* <option selected="">ENG</option> */}
+                            <option value="1">BN</option>
+                            <option value="1">BN</option>
                             <option value="1">BN</option>
                         </select>
                         <div className="search-sidebar">

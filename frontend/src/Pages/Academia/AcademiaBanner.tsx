@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 import axios from 'axios';
 import config from '../../config';
 import { useEffect, useState } from 'react';
+import { useLanguage } from '../../LanguageContext';
 interface AcademiaCategoryLanguage {
   id: number;
   academia_category_id: string;
@@ -41,6 +42,7 @@ function AcademiaBanner() {
     const [data, setData] = useState<AcademiaCategory[] | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
+    const { languageId } = useLanguage(); // Use the current language ID from the context
     let { details } = useParams();
     if(details == 'sb-academia') {
       details = 'sb-academia'
@@ -52,7 +54,7 @@ function AcademiaBanner() {
     useEffect(() => {
         const fetchData = async () => {
           try {
-            const response = await axios.get(config.API_URL_LIVE + config.ACADEMIA_CATEGORY + '?lang=1&page=1&size=20');
+            const response = await axios.get(config.API_URL_LIVE + config.ACADEMIA_CATEGORY + `?lang=${languageId}&page=1&size=20`);
             // Check for status
             if (response.status === 200) {
               setData(response.data.data); // Set the data from the API response
@@ -67,7 +69,7 @@ function AcademiaBanner() {
           }
         };
         fetchData();
-      }, []);
+      }, [languageId]);
   return (
     <div>
         <section className="news-page-banner text-center">

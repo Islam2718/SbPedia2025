@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import axios from 'axios';
 import config from '../../config';
 import { useEffect, useState } from 'react';
+import { useLanguage } from '../../LanguageContext';
 interface WikiCategoryItem {
     id: number;
     parent_id: string;
@@ -31,6 +32,7 @@ function DesignBanner() {
     const [data, setData] = useState<WikiCategoryItem[] | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
+    const { languageId } = useLanguage(); // Use the current language ID from the context
     // useEffect(() => {
     //     const fetchData = async () => {
     //       try {

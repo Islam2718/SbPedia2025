@@ -3,7 +3,7 @@ import axios from 'axios'
 import config from '../../config'
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import { useLanguage } from '../../LanguageContext';
 
 export interface NewsItem {
     id: number;
@@ -59,11 +59,11 @@ function NewsPost() {
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
     const [newsData, setNewsData] = useState<NewsItem[] | null>(null);
-
+    const { languageId } = useLanguage(); // Use the current language ID from the context
     useEffect(() => {
       const fetchNews = async () => {
         try {
-          const response = await axios.get(config.API_URL_LIVE + config.NEWS + '?lang=1&page=1&size=20');
+          const response = await axios.get(config.API_URL_LIVE + config.NEWS + `?lang=${languageId}&page=1&size=20`);
           
           if (response.status === 200) {
             setNewsData(response.data.data); // Set the news data from the response
@@ -78,7 +78,7 @@ function NewsPost() {
       };
   
       fetchNews();
-    }, []);
+    }, [languageId]);
   return (
     <div>
 

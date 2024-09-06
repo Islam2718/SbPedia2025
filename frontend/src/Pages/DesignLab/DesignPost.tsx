@@ -4,7 +4,7 @@ import config from '../../config'
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
-
+import { useLanguage } from '../../LanguageContext';
 interface DesignApiResponse {
   data: DesignItem[];
   current_page: number;
@@ -74,6 +74,7 @@ function DesignPost() {
     const [totalPages, setTotalPages] = useState<number>(1);
     const location = useLocation();
     const [hookpageNumbers, setPageNumbers] = useState<PaginationProps[]>([]);
+    const { languageId } = useLanguage(); // Use the current language ID from the context
     useEffect(() => {
       const fetchDesign = async () => {
         try {
@@ -92,7 +93,7 @@ function DesignPost() {
       };
   
       fetchDesign();
-    }, [currentPage]);
+    }, [currentPage, languageId]);
       // Extract the page number from the URL query parameters
       const pageNumbers = [];
 

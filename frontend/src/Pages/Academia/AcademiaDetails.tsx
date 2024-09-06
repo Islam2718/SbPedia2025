@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import AcademiaBanner from './AcademiaBanner';
 import AcademiaSidebar from './AcademiaSidebar';
-
+import { useLanguage } from '../../LanguageContext';
 interface AcademiaContentLanguage {
   id: number;
   academia_content_id: string;
@@ -54,7 +54,7 @@ function AcademiaDetails() {
     const [error, setError] = useState<string | null>(null);
     const [data, setData] = useState<AcademiaContent | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
-
+    const { languageId } = useLanguage(); // Use the current language ID from the context
     useEffect(() => {
         const fetchNews = async () => {
           try {
@@ -73,7 +73,7 @@ function AcademiaDetails() {
         };
     
         fetchNews();
-      }, []);
+      }, [languageId]);
 
   return (
     <div>
